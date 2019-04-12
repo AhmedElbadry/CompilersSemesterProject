@@ -40,6 +40,7 @@ ISVOID		: ('i'|'I')('s'|'S')('v'|'V')('o'|'O')('i'|'I')('d'|'D');
 NOT		: ('n'|'N')('o'|'O')('t'|'T');
 
 //ID's
+fragment SYMBOL : '!';
 fragment DIGIT	: '0'..'9';
 fragment LLETTER: 'a'..'z';
 fragment ULETTER: 'A'..'Z';
@@ -51,3 +52,4 @@ INT_CONST	: DIGIT+;
 TYPEID		: ULETTER('_'|LETTER|DIGIT)*;
 OBJECTID	: LLETTER('_'|LETTER|DIGIT)*;
 WS: [ \n\t\r]-> skip;
+STRING	    : ('"'|'\'')('_'|LETTER|DIGIT|SYMBOL)*('"'|'\'');

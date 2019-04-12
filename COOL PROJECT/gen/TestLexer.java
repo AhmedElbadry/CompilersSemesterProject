@@ -6,14 +6,19 @@ import org.antlr.v4.runtime.Token;
 public class TestLexer {
     public static String arr[]=new String[100];
     public static int i=1;
-    public static void main(String[] args) throws Exception {
-        System.out.println("Parsing: " + args[0]);
+    public static boolean err = false;
+    public static BufferedWriter writer ;
 
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("Parsing: " + args[0]);
+        File file = new File("good.cl-lex.txt");
+        file.delete();
+        writer = new BufferedWriter(new FileWriter("good.cl-lex.txt", true));
         FileInputStream fis = new FileInputStream(new File(args[0]));
         ANTLRInputStream input = new ANTLRInputStream(fis);
         CoolLexer lexer = new CoolLexer(input);
 
-        Token token = lexer.nextToken();
 
 
         //FileInputStream tokensFile = new FileInputStream(new File("CoolLexer.tokens"));
@@ -36,26 +41,34 @@ public class TestLexer {
         // Always close files.
         bufferedReader.close();
 
-
+        Token token = lexer.nextToken();
+        System.out.println(token.getType());
         while (token.getType() != CoolLexer.EOF) {
-            System.out.println("\t" + getTokenType(token.getType()) + "\t\t"
+            System.out.println("\t" + getTokenType(token) + "\t\t"
                     /*+ token.getText() + "  " + token.getLine()*/);
             token = lexer.nextToken();
         }
 
 
-
+        writer.close();
 
 
     }
 
-    private static String getTokenType(int tokenType) {
-        //System.out.println(tokenType + ' ' + i);
-        if(tokenType < i){
-            return arr[tokenType];
+    private static String getTokenType(Token token)throws Exception {
+        //System.out.println(tokenType + ' ' + i);getText()
+        if(token.getType() !=0 ){
+            writer.append(Integer.toString(token.getLine()) + " : lexer: " + arr[token.getType()] + '\n');
+            return arr[token.getType()];
         }else{
+            //ERROR: 1: Lexer: invalid character: \
+            err = true;
+            writer.append("ERROR: " + Integer.toString(token.getLine()) + " : lexer: invalid character: "
+                    + token.getText() + '\n');
             return  "Error";
         }
+
+
 
 
 /*
