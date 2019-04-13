@@ -1,0 +1,5 @@
+1 : lexer: IF
+ERROR: 1 : lexer: invalid character: $
+ERROR: 1 : lexer: invalid character: ?
+ERROR: 1 : lexer: invalid character: _
+1 : lexer: IF
