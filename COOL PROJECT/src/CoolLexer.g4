@@ -1,6 +1,4 @@
 lexer grammar CoolLexer;
-WS: [ \n\t\r]-> skip;
-INVALID : . ;
 SEMICOLON   : ';';
 DARROW      : '=>';
 LPAREN	    : '(';
@@ -54,3 +52,5 @@ INT_CONST	: DIGIT+;
 TYPEID		: ULETTER('_'|LETTER|DIGIT)*;
 OBJECTID	: LLETTER('_'|LETTER|DIGIT)*;
 STRING	    : ('"'|'\'')('_'|LETTER|DIGIT|SYMBOL)*('"'|'\'');
+WS: [ \n\t\r]-> skip;
+INVALID : . ;   //must be here

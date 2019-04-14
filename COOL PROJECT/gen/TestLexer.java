@@ -55,7 +55,7 @@ public class TestLexer {
     private static String getTokenType(Token token)throws Exception {
         String str;
 
-        if(token.getType() == 2){ // 2 is the INVALID tag in .token files because there is a problem in comparing strings
+        if(token.getType() == i-1){ // i-1 is the last token tag in .tokens file which refers to the INVALID token
             err = true;
             str = ("ERROR: " + Integer.toString(token.getLine()) + " : lexer: invalid character: "
                     + token.getText() + '\n');
