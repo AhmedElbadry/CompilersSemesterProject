@@ -1,8 +1,0 @@
-1 : lexer: SEMICOLON
-1 : lexer: DOT
-1 : lexer: IF
-1 : lexer: LT
-ERROR: 1 : lexer: invalid character: $
-ERROR: 1 : lexer: invalid character: ?
-ERROR: 1 : lexer: invalid character: $
-1 : lexer: FI

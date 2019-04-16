@@ -51,6 +51,6 @@ BOOL_CONST	: (TRUE|FALSE);
 INT_CONST	: DIGIT+;
 TYPEID		: ULETTER('_'|LETTER|DIGIT)*;
 OBJECTID	: LLETTER('_'|LETTER|DIGIT)*;
-STRING	    : ('"'|'\'')('_'|LETTER|DIGIT|SYMBOL)*('"'|'\'');
+STRING	    : '"' (~('"'))* '"'; //('"')('_'|LETTER|DIGIT|SYMBOL)*('"');
 WS: [ \n\t\r]-> skip;
 INVALID : . ;   //must be here

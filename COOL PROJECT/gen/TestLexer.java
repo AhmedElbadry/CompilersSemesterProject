@@ -6,25 +6,23 @@ import java.util.*;
 
 public class TestLexer {
     public static String arr[] = new String[100];
-    public static int i = 1;
-    public static boolean err = false;
+    public static int i = 1, err = 0;
     public static BufferedWriter writer ;
 
     public static void main(String[] args) throws Exception {
-        //System.out.println("Parsing: " + args[0]);
+        String TestCaseFile = "../Test Cases/" + args[0];
+        String OutputFile = "../Output/" + args[0] + "-lex";
 
-        File file = new File("good.cl-lex.txt");
+        File file = new File(OutputFile);
         file.delete();
 
-        writer = new BufferedWriter(new FileWriter("good.cl-lex.txt", true));
+        writer = new BufferedWriter(new FileWriter(OutputFile, true));
 
-        FileInputStream fis = new FileInputStream(new File(args[0]));
+        FileInputStream fis = new FileInputStream(new File(TestCaseFile));
         ANTLRInputStream input = new ANTLRInputStream(fis);
         CoolLexer lexer = new CoolLexer(input);
 
         FileReader tokensFile = new FileReader("CoolLexer.tokens");
-
-        // Always wrap FileReader in BufferedReader.
         BufferedReader bufferedReader = new BufferedReader(tokensFile);
 
         String line = bufferedReader.readLine();
@@ -34,7 +32,6 @@ public class TestLexer {
             line = bufferedReader.readLine();
         }
 
-        // Always close files.
         bufferedReader.close();
 
         /*List xx = lexer.getAllTokens();
@@ -43,12 +40,12 @@ public class TestLexer {
         }*/
 
         Token token = lexer.nextToken();
-        //System.out.println(token.getType());
         while (token.getType() != CoolLexer.EOF) {
             System.out.println(getTokenType(token));
             token = lexer.nextToken();
         }
 
+        System.out.println("\nThis file contains " + err + " Errors!");
         writer.close();
     }
 
@@ -56,14 +53,14 @@ public class TestLexer {
         String str;
 
         if(token.getType() == i-1){ // i-1 is the last token tag in .tokens file which refers to the INVALID token
-            err = true;
-            str = ("ERROR: " + Integer.toString(token.getLine()) + " : lexer: invalid character: "
-                    + token.getText() + '\n');
+            err++;
+            str = ("ERROR: " + Integer.toString(token.getLine()) + ": Lexer: invalid character: "
+                    + token.getText());
         }else{
-            str = (Integer.toString(token.getLine()) + " : lexer: " + arr[token.getType()] + '\n');
+            str = (Integer.toString(token.getLine()) + ": lexer: " + arr[token.getType()] + ": " + token.getText());
         }
 
-        writer.append(str);
+        writer.append(str + "\n");
         return  str;
     }
 }
