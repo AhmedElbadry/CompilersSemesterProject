@@ -1,3 +1,5 @@
 class Main{
-   1 + 5;
+   main():Object{
+        1 + 2 ;
+   };
 };
