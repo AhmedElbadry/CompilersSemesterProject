@@ -7,6 +7,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface CoolListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link CoolParser#prog}.
+	 * @param ctx the parse tree
+	 */
+	void enterProg(CoolParser.ProgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoolParser#prog}.
+	 * @param ctx the parse tree
+	 */
+	void exitProg(CoolParser.ProgContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CoolParser#expr}.
 	 * @param ctx the parse tree
 	 */

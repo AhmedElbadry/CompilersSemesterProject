@@ -23,10 +23,10 @@ public class CoolParser extends Parser {
 		LET=33, NEW=34, ISVOID=35, NOT=36, BOOL_CONST=37, INT_CONST=38, TYPEID=39, 
 		OBJECTID=40, STRING=41, WS=42, INVALID=43;
 	public static final int
-		RULE_expr = 0;
+		RULE_prog = 0, RULE_expr = 1;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"expr"
+			"prog", "expr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -99,6 +99,50 @@ public class CoolParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	public static class ProgContext extends ParserRuleContext {
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public ProgContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_prog; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).enterProg(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).exitProg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CoolVisitor ) return ((CoolVisitor<? extends T>)visitor).visitProg(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ProgContext prog() throws RecognitionException {
+		ProgContext _localctx = new ProgContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_prog);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(4);
+			expr();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class ExprContext extends ParserRuleContext {
 		public Token OBJECTID;
 		public TerminalNode TYPEID() { return getToken(CoolParser.TYPEID, 0); }
@@ -128,14 +172,14 @@ public class CoolParser extends Parser {
 
 	public final ExprContext expr() throws RecognitionException {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_expr);
+		enterRule(_localctx, 2, RULE_expr);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2);
+			setState(6);
 			match(TYPEID);
-			setState(4); 
+			setState(8); 
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -143,7 +187,7 @@ public class CoolParser extends Parser {
 				case 1:
 					{
 					{
-					setState(3);
+					setState(7);
 					((ExprContext)_localctx).OBJECTID = match(INT_CONST);
 					}
 					}
@@ -151,13 +195,13 @@ public class CoolParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(6); 
+				setState(10); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
-			setState(8);
+			setState(12);
 			match(INT_CONST);
-			setState(9);
+			setState(13);
 			match(SEMICOLON);
 			}
 		}
@@ -173,10 +217,11 @@ public class CoolParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-\16\4\2\t\2\3\2\3"+
-		"\2\6\2\7\n\2\r\2\16\2\b\3\2\3\2\3\2\3\2\2\2\3\2\2\2\2\r\2\4\3\2\2\2\4"+
-		"\6\7)\2\2\5\7\7(\2\2\6\5\3\2\2\2\7\b\3\2\2\2\b\6\3\2\2\2\b\t\3\2\2\2\t"+
-		"\n\3\2\2\2\n\13\7(\2\2\13\f\7\3\2\2\f\3\3\2\2\2\3\b";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-\22\4\2\t\2\4\3\t"+
+		"\3\3\2\3\2\3\3\3\3\6\3\13\n\3\r\3\16\3\f\3\3\3\3\3\3\3\3\2\2\4\2\4\2\2"+
+		"\2\20\2\6\3\2\2\2\4\b\3\2\2\2\6\7\5\4\3\2\7\3\3\2\2\2\b\n\7)\2\2\t\13"+
+		"\7(\2\2\n\t\3\2\2\2\13\f\3\2\2\2\f\n\3\2\2\2\f\r\3\2\2\2\r\16\3\2\2\2"+
+		"\16\17\7(\2\2\17\20\7\3\2\2\20\5\3\2\2\2\3\f";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

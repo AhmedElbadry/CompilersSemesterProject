@@ -10,6 +10,12 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface CoolVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link CoolParser#prog}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProg(CoolParser.ProgContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CoolParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
