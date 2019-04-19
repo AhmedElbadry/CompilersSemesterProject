@@ -1,4 +1,4 @@
-lexer grammar CoolLexer;
+lexer grammar Lexer;
 SEMICOLON   : ';';
 DARROW      : '=>';
 LPAREN	    : '(';

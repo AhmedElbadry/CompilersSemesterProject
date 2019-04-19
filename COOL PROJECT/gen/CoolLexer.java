@@ -1,4 +1,4 @@
-// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/src\CoolLexer.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/src\Cool.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -101,7 +101,7 @@ public class CoolLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "CoolLexer.g4"; }
+	public String getGrammarFileName() { return "Cool.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
