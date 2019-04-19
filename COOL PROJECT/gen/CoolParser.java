@@ -23,10 +23,10 @@ public class CoolParser extends Parser {
 		LET=33, NEW=34, ISVOID=35, NOT=36, BOOL_CONST=37, INT_CONST=38, TYPEID=39, 
 		OBJECTID=40, STRING=41, WS=42, INVALID=43;
 	public static final int
-		RULE_prog = 0, RULE_expr = 1;
+		RULE_prog = 0, RULE_classes = 1, RULE_class = 2, RULE_expr = 3;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"prog", "expr"
+			"prog", "classes", "class", "expr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -100,8 +100,8 @@ public class CoolParser extends Parser {
 	}
 
 	public static class ProgContext extends ParserRuleContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
+		public ClassesContext classes() {
+			return getRuleContext(ClassesContext.class,0);
 		}
 		public ProgContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -128,8 +128,152 @@ public class CoolParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(4);
+			setState(8);
+			classes();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ClassesContext extends ParserRuleContext {
+		public ClassContext class() {
+			return getRuleContext(ClassContext.class,0);
+		}
+		public TerminalNode SEMICOLON() { return getToken(CoolParser.SEMICOLON, 0); }
+		public ClassesContext classes() {
+			return getRuleContext(ClassesContext.class,0);
+		}
+		public TerminalNode EOF() { return getToken(CoolParser.EOF, 0); }
+		public ClassesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_classes; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).enterClasses(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).exitClasses(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CoolVisitor ) return ((CoolVisitor<? extends T>)visitor).visitClasses(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ClassesContext classes() throws RecognitionException {
+		ClassesContext _localctx = new ClassesContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_classes);
+		try {
+			setState(15);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case CLASS:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(10);
+				class();
+				setState(11);
+				match(SEMICOLON);
+				setState(12);
+				classes();
+				}
+				break;
+			case EOF:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(14);
+				match(EOF);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ClassContext extends ParserRuleContext {
+		public TerminalNode CLASS() { return getToken(CoolParser.CLASS, 0); }
+		public List<TerminalNode> TYPEID() { return getTokens(CoolParser.TYPEID); }
+		public TerminalNode TYPEID(int i) {
+			return getToken(CoolParser.TYPEID, i);
+		}
+		public TerminalNode LBRACE() { return getToken(CoolParser.LBRACE, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(CoolParser.RBRACE, 0); }
+		public TerminalNode SEMICOLON() { return getToken(CoolParser.SEMICOLON, 0); }
+		public TerminalNode INHERITS() { return getToken(CoolParser.INHERITS, 0); }
+		public ClassContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_class; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).enterClass(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CoolListener ) ((CoolListener)listener).exitClass(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CoolVisitor ) return ((CoolVisitor<? extends T>)visitor).visitClass(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ClassContext class() throws RecognitionException {
+		ClassContext _localctx = new ClassContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_class);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(17);
+			match(CLASS);
+			setState(18);
+			match(TYPEID);
+			setState(21);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==INHERITS) {
+				{
+				setState(19);
+				match(INHERITS);
+				setState(20);
+				match(TYPEID);
+				}
+			}
+
+			setState(23);
+			match(LBRACE);
+			setState(24);
 			expr();
+			setState(25);
+			match(RBRACE);
+			setState(26);
+			match(SEMICOLON);
 			}
 		}
 		catch (RecognitionException re) {
@@ -144,12 +288,11 @@ public class CoolParser extends Parser {
 	}
 
 	public static class ExprContext extends ParserRuleContext {
-		public Token OBJECTID;
-		public TerminalNode TYPEID() { return getToken(CoolParser.TYPEID, 0); }
 		public List<TerminalNode> INT_CONST() { return getTokens(CoolParser.INT_CONST); }
 		public TerminalNode INT_CONST(int i) {
 			return getToken(CoolParser.INT_CONST, i);
 		}
+		public TerminalNode PLUS() { return getToken(CoolParser.PLUS, 0); }
 		public TerminalNode SEMICOLON() { return getToken(CoolParser.SEMICOLON, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -172,36 +315,17 @@ public class CoolParser extends Parser {
 
 	public final ExprContext expr() throws RecognitionException {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_expr);
+		enterRule(_localctx, 6, RULE_expr);
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(6);
-			match(TYPEID);
-			setState(8); 
-			_errHandler.sync(this);
-			_alt = 1;
-			do {
-				switch (_alt) {
-				case 1:
-					{
-					{
-					setState(7);
-					((ExprContext)_localctx).OBJECTID = match(INT_CONST);
-					}
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
-				}
-				setState(10); 
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
-			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
-			setState(12);
+			setState(28);
 			match(INT_CONST);
-			setState(13);
+			setState(29);
+			match(PLUS);
+			setState(30);
+			match(INT_CONST);
+			setState(31);
 			match(SEMICOLON);
 			}
 		}
@@ -217,11 +341,16 @@ public class CoolParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-\22\4\2\t\2\4\3\t"+
-		"\3\3\2\3\2\3\3\3\3\6\3\13\n\3\r\3\16\3\f\3\3\3\3\3\3\3\3\2\2\4\2\4\2\2"+
-		"\2\20\2\6\3\2\2\2\4\b\3\2\2\2\6\7\5\4\3\2\7\3\3\2\2\2\b\n\7)\2\2\t\13"+
-		"\7(\2\2\n\t\3\2\2\2\13\f\3\2\2\2\f\n\3\2\2\2\f\r\3\2\2\2\r\16\3\2\2\2"+
-		"\16\17\7(\2\2\17\20\7\3\2\2\20\5\3\2\2\2\3\f";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-$\4\2\t\2\4\3\t\3"+
+		"\4\4\t\4\4\5\t\5\3\2\3\2\3\3\3\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3"+
+		"\4\5\4\30\n\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\2\2\6\2\4\6"+
+		"\b\2\2\2!\2\n\3\2\2\2\4\21\3\2\2\2\6\23\3\2\2\2\b\36\3\2\2\2\n\13\5\4"+
+		"\3\2\13\3\3\2\2\2\f\r\5\6\4\2\r\16\7\3\2\2\16\17\5\4\3\2\17\22\3\2\2\2"+
+		"\20\22\7\2\2\3\21\f\3\2\2\2\21\20\3\2\2\2\22\5\3\2\2\2\23\24\7\37\2\2"+
+		"\24\27\7)\2\2\25\26\7!\2\2\26\30\7)\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30"+
+		"\31\3\2\2\2\31\32\7\20\2\2\32\33\5\b\5\2\33\34\7\21\2\2\34\35\7\3\2\2"+
+		"\35\7\3\2\2\2\36\37\7(\2\2\37 \7\b\2\2 !\7(\2\2!\"\7\3\2\2\"\t\3\2\2\2"+
+		"\4\21\27";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -1,2 +1,16 @@
 parser grammar Parser;
-expr: TYPEID OBJECTID = INT_CONST + INT_CONST SEMICOLON;
+
+classes:
+    class SEMICOLON classes
+    | EOF
+    ;
+
+class:
+    CLASS TYPEID (INHERITS TYPEID)? LBRACE expr RBRACE
+    ;
+
+expr:
+    INT_CONST PLUS INT_CONST SEMICOLON
+    ;
+
+

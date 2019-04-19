@@ -17,6 +17,26 @@ public interface CoolListener extends ParseTreeListener {
 	 */
 	void exitProg(CoolParser.ProgContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CoolParser#classes}.
+	 * @param ctx the parse tree
+	 */
+	void enterClasses(CoolParser.ClassesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoolParser#classes}.
+	 * @param ctx the parse tree
+	 */
+	void exitClasses(CoolParser.ClassesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CoolParser#class}.
+	 * @param ctx the parse tree
+	 */
+	void enterClass(CoolParser.ClassContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CoolParser#class}.
+	 * @param ctx the parse tree
+	 */
+	void exitClass(CoolParser.ClassContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CoolParser#expr}.
 	 * @param ctx the parse tree
 	 */
