@@ -1,8 +1,10 @@
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.TokenSource;
 import org.antlr.v4.runtime.TokenFactory;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.CommonTokenFactory;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,14 +13,14 @@ import java.util.*;
 
 public class Parse {
 
-    public static List<Token> tokenList;
+    public static List<Token> tokenList = new ArrayList();
     public static String intToStrToken[] = new String[100];
     public static HashMap<String, Integer> strToIntToken = new HashMap();
 
 
     public static void main(String[] args) throws Exception {
 
-
+        /*
         String TestCaseFile = "Test Cases/" + args[0];
         FileInputStream fis = new FileInputStream(new File(TestCaseFile));
         ANTLRInputStream input = new ANTLRInputStream(fis);
@@ -30,10 +32,11 @@ public class Parse {
         System.out.println(parser.getRuleContext() );
         System.out.println(parser.getCurrentToken());
 
+        */
 
         //parser.consume();
 
-        /*
+
 
         //load all tokens from CoolLexer.tokens
         loadTokens();
@@ -43,7 +46,7 @@ public class Parse {
 
         System.out.println(tokenList);
 
-*/
+
 
 
         /*
@@ -89,6 +92,7 @@ public class Parse {
         int currTokenType = 0;
         String currTokenText;
         //TokenFactory tokenFactory;
+        TokenFactory _factory = CommonTokenFactory.DEFAULT;
         while(line != null && line.charAt(0) != '\''){
 
             //System.out.println(lineNum + ": " + line);
@@ -99,7 +103,8 @@ public class Parse {
                 currTokenType = strToIntToken.get(line);
             }else{
                 currTokenText = line;
-                //tokenList.add(tokenFactory.create(currTokenType, currTokenText));
+                Token t = _factory.create(currTokenType, currTokenText);
+                tokenList.add(t);
                 lineNum = 0;
             }
             line = lexFile__bufferedReader.readLine();
@@ -128,6 +133,5 @@ public class Parse {
 
         bufferedReader.close();
     }
-
 
 }
