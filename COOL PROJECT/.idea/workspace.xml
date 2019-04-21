@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1033fb-c10a-47aa-b226-c55fb6cc94a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../links.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -250,7 +252,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Tool Output" order="8" weight="0.22690992" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" visible="true" weight="0.23261118" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" visible="true" weight="0.12086659" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50323623" side_tool="true" weight="0.48574686" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.50969213" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
