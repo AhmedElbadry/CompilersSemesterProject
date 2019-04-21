@@ -2,16 +2,15 @@ import java.io.*;
 import java.io.FileInputStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.Token;
-import java.util.*;
 
-public class TestLexer {
+public class Lex {
     public static String arr[] = new String[100];
     public static int i = 1, err = 0;
     public static BufferedWriter writer ;
 
     public static void main(String[] args) throws Exception {
-        String TestCaseFile = "../Test Cases/" + args[0];
-        String OutputFile = "../Output/" + args[0] + "-lex";
+        String TestCaseFile = "Test Cases/" + args[0];
+        String OutputFile = "Output/" + args[0] + "-lex";
 
         File file = new File(OutputFile);
         file.delete();
@@ -22,7 +21,7 @@ public class TestLexer {
         ANTLRInputStream input = new ANTLRInputStream(fis);
         CoolLexer lexer = new CoolLexer(input);
 
-        FileReader tokensFile = new FileReader("CoolLexer.tokens");
+        FileReader tokensFile = new FileReader("gen/CoolLexer.tokens");
         BufferedReader bufferedReader = new BufferedReader(tokensFile);
 
         String line = bufferedReader.readLine();
