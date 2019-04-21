@@ -10,7 +10,7 @@ You should be in the `COOL Project` directory
 
 To compile the project:
 
-`javac src/*.java gen/*.java -d classes`
+`javac -cp "dep/antlr4-runtime-4.7.2.jar" src/*.java gen/*.java -d classes`
 
 
 To run the lexer on an input file good1.cl
