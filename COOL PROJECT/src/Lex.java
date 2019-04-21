@@ -5,7 +5,8 @@ import org.antlr.v4.runtime.Token;
 
 public class Lex {
     public static String arr[] = new String[100];
-    public static int i = 1, err = 0;
+    public static int i = 1;
+    public static boolean err = false;
     public static BufferedWriter writer ;
 
     public static void main(String[] args) throws Exception {
@@ -39,27 +40,32 @@ public class Lex {
         }*/
 
         Token token = lexer.nextToken();
-        while (token.getType() != CoolLexer.EOF) {
-            System.out.println(getTokenType(token));
+        while (!err && token.getType() != CoolLexer.EOF) {
+            getTokenType(token);
             token = lexer.nextToken();
         }
 
-        System.out.println("\nThis file contains " + err + " Errors!");
         writer.close();
+
+        if(err){
+            file = new File(OutputFile);
+            file.delete();
+        }
+        else{
+            System.out.println("Phase 1: Lexer: Done!");
+        }
     }
 
-    private static String getTokenType(Token token)throws Exception {
+    private static void getTokenType(Token token)throws Exception {
         String str;
 
         if(token.getType() == i-1){ // i-1 is the last token tag in .tokens file which refers to the INVALID token
-            err++;
-            str = ("ERROR: " + Integer.toString(token.getLine()) + ": Lexer: invalid character: "
-                    + token.getText());
+            err = true;
+            str = ("ERROR: " + token.getLine() + ": Lexer: invalid character: " + token.getText());
+            System.out.println(str);
         }else{
-            str = (Integer.toString(token.getLine()) + ": lexer: " + arr[token.getType()] + ": " + token.getText());
+            str = (token.getLine() + "\n" + arr[token.getType()] + "\n" + token.getText() + "\n");
+            writer.append(str);
         }
-
-        writer.append(str + "\n");
-        return  str;
     }
 }

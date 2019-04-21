@@ -1,96 +1,288 @@
-1: lexer: CLASS: class
-1: lexer: TYPEID: B
-1: lexer: LBRACE: {
-2: lexer: OBJECTID: s
-2: lexer: COLON: :
-2: lexer: TYPEID: String
-2: lexer: ASSIGN: <-
-2: lexer: STRING: "Hello"
-2: lexer: SEMICOLON: ;
-3: lexer: OBJECTID: g
-3: lexer: LPAREN: (
-3: lexer: OBJECTID: y
-3: lexer: COLON: :
-3: lexer: TYPEID: String
-3: lexer: RPAREN: )
-3: lexer: COLON: :
-3: lexer: TYPEID: Int
-3: lexer: LBRACE: {
-4: lexer: OBJECTID: y
-4: lexer: DOT: .
-4: lexer: OBJECTID: concat
-4: lexer: LPAREN: (
-4: lexer: OBJECTID: s
-4: lexer: RPAREN: )
-5: lexer: RBRACE: }
-5: lexer: SEMICOLON: ;
-6: lexer: OBJECTID: f
-6: lexer: LPAREN: (
-6: lexer: OBJECTID: x
-6: lexer: COLON: :
-6: lexer: TYPEID: Int
-6: lexer: RPAREN: )
-6: lexer: COLON: :
-6: lexer: TYPEID: Int
-6: lexer: LBRACE: {
-7: lexer: OBJECTID: x
-7: lexer: PLUS: +
-7: lexer: INT_CONST: 1
-8: lexer: RBRACE: }
-8: lexer: SEMICOLON: ;
-9: lexer: RBRACE: }
-9: lexer: SEMICOLON: ;
-11: lexer: CLASS: class
-11: lexer: TYPEID: A
-11: lexer: OBJECTID: inherits
-11: lexer: TYPEID: B
-11: lexer: LBRACE: {
-12: lexer: OBJECTID: a
-12: lexer: COLON: :
-12: lexer: TYPEID: Int
-12: lexer: SEMICOLON: ;
-13: lexer: OBJECTID: b
-13: lexer: COLON: :
-13: lexer: TYPEID: B
-13: lexer: ASSIGN: <-
-13: lexer: NEW: new
-13: lexer: TYPEID: B
-13: lexer: SEMICOLON: ;
-14: lexer: OBJECTID: f
-14: lexer: LPAREN: (
-14: lexer: OBJECTID: x
-14: lexer: COLON: :
-14: lexer: TYPEID: Int
-14: lexer: RPAREN: )
-14: lexer: COLON: :
-14: lexer: TYPEID: Int
-14: lexer: LBRACE: {
-15: lexer: OBJECTID: x
-15: lexer: PLUS: +
-15: lexer: OBJECTID: a
-16: lexer: RBRACE: }
-16: lexer: SEMICOLON: ;
-17: lexer: RBRACE: }
-17: lexer: SEMICOLON: ;
-18: lexer: CLASS: class
-18: lexer: TYPEID: Main
-18: lexer: LBRACE: {
-19: lexer: OBJECTID: main
-19: lexer: LPAREN: (
-19: lexer: RPAREN: )
-19: lexer: COLON: :
-19: lexer: TYPEID: Object
-19: lexer: LBRACE: {
-20: lexer: LPAREN: (
-20: lexer: NEW: new
-20: lexer: TYPEID: IO
-20: lexer: RPAREN: )
-20: lexer: DOT: .
-20: lexer: OBJECTID: out_string
-20: lexer: LPAREN: (
-20: lexer: STRING: "HelloWorld"
-20: lexer: RPAREN: )
-21: lexer: RBRACE: }
-21: lexer: SEMICOLON: ;
-22: lexer: RBRACE: }
-22: lexer: SEMICOLON: ;
+1
+CLASS
+class
+1
+TYPEID
+B
+1
+LBRACE
+{
+2
+OBJECTID
+s
+2
+COLON
+:
+2
+TYPEID
+String
+2
+ASSIGN
+<-
+2
+STRING
+"Hello"
+2
+SEMICOLON
+;
+3
+OBJECTID
+g
+3
+LPAREN
+(
+3
+OBJECTID
+y
+3
+COLON
+:
+3
+TYPEID
+String
+3
+RPAREN
+)
+3
+COLON
+:
+3
+TYPEID
+Int
+3
+LBRACE
+{
+4
+OBJECTID
+y
+4
+DOT
+.
+4
+OBJECTID
+concat
+4
+LPAREN
+(
+4
+OBJECTID
+s
+4
+RPAREN
+)
+5
+RBRACE
+}
+5
+SEMICOLON
+;
+6
+OBJECTID
+f
+6
+LPAREN
+(
+6
+OBJECTID
+x
+6
+COLON
+:
+6
+TYPEID
+Int
+6
+RPAREN
+)
+6
+COLON
+:
+6
+TYPEID
+Int
+6
+LBRACE
+{
+7
+OBJECTID
+x
+7
+PLUS
++
+7
+INT_CONST
+1
+8
+RBRACE
+}
+8
+SEMICOLON
+;
+9
+RBRACE
+}
+9
+SEMICOLON
+;
+11
+CLASS
+class
+11
+TYPEID
+A
+11
+OBJECTID
+inherits
+11
+TYPEID
+B
+11
+LBRACE
+{
+12
+OBJECTID
+a
+12
+COLON
+:
+12
+TYPEID
+Int
+12
+SEMICOLON
+;
+13
+OBJECTID
+b
+13
+COLON
+:
+13
+TYPEID
+B
+13
+ASSIGN
+<-
+13
+NEW
+new
+13
+TYPEID
+B
+13
+SEMICOLON
+;
+14
+OBJECTID
+f
+14
+LPAREN
+(
+14
+OBJECTID
+x
+14
+COLON
+:
+14
+TYPEID
+Int
+14
+RPAREN
+)
+14
+COLON
+:
+14
+TYPEID
+Int
+14
+LBRACE
+{
+15
+OBJECTID
+x
+15
+PLUS
++
+15
+OBJECTID
+a
+16
+RBRACE
+}
+16
+SEMICOLON
+;
+17
+RBRACE
+}
+17
+SEMICOLON
+;
+18
+CLASS
+class
+18
+TYPEID
+Main
+18
+LBRACE
+{
+19
+OBJECTID
+main
+19
+LPAREN
+(
+19
+RPAREN
+)
+19
+COLON
+:
+19
+TYPEID
+Object
+19
+LBRACE
+{
+20
+LPAREN
+(
+20
+NEW
+new
+20
+TYPEID
+IO
+20
+RPAREN
+)
+20
+DOT
+.
+20
+OBJECTID
+out_string
+20
+LPAREN
+(
+20
+STRING
+"HelloWorld"
+20
+RPAREN
+)
+21
+RBRACE
+}
+21
+SEMICOLON
+;
+22
+RBRACE
+}
+22
+SEMICOLON
+;

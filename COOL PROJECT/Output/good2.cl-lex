@@ -1,119 +1,357 @@
-1: lexer: CLASS: class
-1: lexer: TYPEID: Main
-1: lexer: OBJECTID: inherits
-1: lexer: TYPEID: IO
-1: lexer: LBRACE: {
-2: lexer: OBJECTID: pal
-2: lexer: LPAREN: (
-2: lexer: OBJECTID: s
-2: lexer: COLON: :
-2: lexer: TYPEID: String
-2: lexer: RPAREN: )
-2: lexer: COLON: :
-2: lexer: TYPEID: Bool
-2: lexer: LBRACE: {
-3: lexer: IF: if
-3: lexer: OBJECTID: s
-3: lexer: DOT: .
-3: lexer: OBJECTID: length
-3: lexer: LPAREN: (
-3: lexer: RPAREN: )
-3: lexer: EQUALS: =
-3: lexer: INT_CONST: 0
-4: lexer: THEN: then
-4: lexer: BOOL_CONST: true
-5: lexer: ELSE: else
-5: lexer: IF: if
-5: lexer: OBJECTID: s
-5: lexer: DOT: .
-5: lexer: OBJECTID: length
-5: lexer: LPAREN: (
-5: lexer: RPAREN: )
-5: lexer: EQUALS: =
-5: lexer: INT_CONST: 1
-6: lexer: THEN: then
-6: lexer: BOOL_CONST: true
-7: lexer: ELSE: else
-7: lexer: IF: if
-7: lexer: OBJECTID: s
-7: lexer: DOT: .
-7: lexer: OBJECTID: substr
-7: lexer: LPAREN: (
-7: lexer: INT_CONST: 0
-7: lexer: COMMA: ,
-7: lexer: INT_CONST: 1
-7: lexer: RPAREN: )
-7: lexer: EQUALS: =
-7: lexer: OBJECTID: s
-7: lexer: DOT: .
-7: lexer: OBJECTID: substr
-7: lexer: LPAREN: (
-7: lexer: OBJECTID: s
-7: lexer: DOT: .
-7: lexer: OBJECTID: length
-7: lexer: LPAREN: (
-7: lexer: RPAREN: )
-7: lexer: MINUS: -
-7: lexer: INT_CONST: 1
-7: lexer: COMMA: ,
-7: lexer: INT_CONST: 1
-7: lexer: RPAREN: )
-8: lexer: THEN: then
-8: lexer: OBJECTID: pal
-8: lexer: LPAREN: (
-8: lexer: OBJECTID: s
-8: lexer: DOT: .
-8: lexer: OBJECTID: substr
-8: lexer: LPAREN: (
-8: lexer: INT_CONST: 1
-8: lexer: COMMA: ,
-8: lexer: OBJECTID: s
-8: lexer: DOT: .
-8: lexer: OBJECTID: length
-8: lexer: LPAREN: (
-8: lexer: RPAREN: )
-8: lexer: MINUS: -
-8: lexer: INT_CONST: 2
-8: lexer: RPAREN: )
-8: lexer: RPAREN: )
-9: lexer: ELSE: else
-9: lexer: BOOL_CONST: false
-10: lexer: FI: fi
-10: lexer: FI: fi
-10: lexer: FI: fi
-11: lexer: RBRACE: }
-11: lexer: SEMICOLON: ;
-13: lexer: OBJECTID: main
-13: lexer: LPAREN: (
-13: lexer: RPAREN: )
-13: lexer: COLON: :
-13: lexer: TYPEID: SELF_TYPE
-13: lexer: LBRACE: {
-14: lexer: OBJECTID: out_string
-14: lexer: LPAREN: (
-14: lexer: STRING: "enter a string ? "
-14: lexer: RPAREN: )
-14: lexer: SEMICOLON: ;
-15: lexer: IF: if
-15: lexer: OBJECTID: pal
-15: lexer: LPAREN: (
-15: lexer: OBJECTID: in_string
-15: lexer: LPAREN: (
-15: lexer: RPAREN: )
-15: lexer: RPAREN: )
-16: lexer: THEN: then
-16: lexer: OBJECTID: out_string
-16: lexer: LPAREN: (
-16: lexer: STRING: "that was a palindrome\n"
-16: lexer: RPAREN: )
-17: lexer: ELSE: else
-17: lexer: OBJECTID: out_string
-17: lexer: LPAREN: (
-17: lexer: STRING: "that was not a palindrome\n"
-17: lexer: RPAREN: )
-18: lexer: FI: fi
-18: lexer: SEMICOLON: ;
-19: lexer: RBRACE: }
-19: lexer: SEMICOLON: ;
-20: lexer: RBRACE: }
-20: lexer: SEMICOLON: ;
+1
+CLASS
+class
+1
+TYPEID
+Main
+1
+OBJECTID
+inherits
+1
+TYPEID
+IO
+1
+LBRACE
+{
+2
+OBJECTID
+pal
+2
+LPAREN
+(
+2
+OBJECTID
+s
+2
+COLON
+:
+2
+TYPEID
+String
+2
+RPAREN
+)
+2
+COLON
+:
+2
+TYPEID
+Bool
+2
+LBRACE
+{
+3
+IF
+if
+3
+OBJECTID
+s
+3
+DOT
+.
+3
+OBJECTID
+length
+3
+LPAREN
+(
+3
+RPAREN
+)
+3
+EQUALS
+=
+3
+INT_CONST
+0
+4
+THEN
+then
+4
+BOOL_CONST
+true
+5
+ELSE
+else
+5
+IF
+if
+5
+OBJECTID
+s
+5
+DOT
+.
+5
+OBJECTID
+length
+5
+LPAREN
+(
+5
+RPAREN
+)
+5
+EQUALS
+=
+5
+INT_CONST
+1
+6
+THEN
+then
+6
+BOOL_CONST
+true
+7
+ELSE
+else
+7
+IF
+if
+7
+OBJECTID
+s
+7
+DOT
+.
+7
+OBJECTID
+substr
+7
+LPAREN
+(
+7
+INT_CONST
+0
+7
+COMMA
+,
+7
+INT_CONST
+1
+7
+RPAREN
+)
+7
+EQUALS
+=
+7
+OBJECTID
+s
+7
+DOT
+.
+7
+OBJECTID
+substr
+7
+LPAREN
+(
+7
+OBJECTID
+s
+7
+DOT
+.
+7
+OBJECTID
+length
+7
+LPAREN
+(
+7
+RPAREN
+)
+7
+MINUS
+-
+7
+INT_CONST
+1
+7
+COMMA
+,
+7
+INT_CONST
+1
+7
+RPAREN
+)
+8
+THEN
+then
+8
+OBJECTID
+pal
+8
+LPAREN
+(
+8
+OBJECTID
+s
+8
+DOT
+.
+8
+OBJECTID
+substr
+8
+LPAREN
+(
+8
+INT_CONST
+1
+8
+COMMA
+,
+8
+OBJECTID
+s
+8
+DOT
+.
+8
+OBJECTID
+length
+8
+LPAREN
+(
+8
+RPAREN
+)
+8
+MINUS
+-
+8
+INT_CONST
+2
+8
+RPAREN
+)
+8
+RPAREN
+)
+9
+ELSE
+else
+9
+BOOL_CONST
+false
+10
+FI
+fi
+10
+FI
+fi
+10
+FI
+fi
+11
+RBRACE
+}
+11
+SEMICOLON
+;
+13
+OBJECTID
+main
+13
+LPAREN
+(
+13
+RPAREN
+)
+13
+COLON
+:
+13
+TYPEID
+SELF_TYPE
+13
+LBRACE
+{
+14
+OBJECTID
+out_string
+14
+LPAREN
+(
+14
+STRING
+"enter a string ? "
+14
+RPAREN
+)
+14
+SEMICOLON
+;
+15
+IF
+if
+15
+OBJECTID
+pal
+15
+LPAREN
+(
+15
+OBJECTID
+in_string
+15
+LPAREN
+(
+15
+RPAREN
+)
+15
+RPAREN
+)
+16
+THEN
+then
+16
+OBJECTID
+out_string
+16
+LPAREN
+(
+16
+STRING
+"that was a palindrome\n"
+16
+RPAREN
+)
+17
+ELSE
+else
+17
+OBJECTID
+out_string
+17
+LPAREN
+(
+17
+STRING
+"that was not a palindrome\n"
+17
+RPAREN
+)
+18
+FI
+fi
+18
+SEMICOLON
+;
+19
+RBRACE
+}
+19
+SEMICOLON
+;
+20
+RBRACE
+}
+20
+SEMICOLON
+;
