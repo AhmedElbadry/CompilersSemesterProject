@@ -12,3 +12,7 @@ https://stackoverflow.com/questions/21534316/is-there-a-simple-example-of-using-
 https://stackoverflow.com/questions/30671068/antlr4-lexer-gettokens-returning-0-tokens
 
 https://github.com/antlr/antlr4/blob/master/runtime/Java/src/org/antlr/v4/runtime/Lexer.java
+
+https://dzone.com/articles/creating-dsl-with-antlr4-and-scala
+
+https://github.com/antlr/antlr4/blob/4.6/doc/listeners.md

@@ -1,10 +1,5 @@
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.TokenStream;
-import org.antlr.v4.runtime.TokenSource;
-import org.antlr.v4.runtime.TokenFactory;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.CommonTokenFactory;
+import org.antlr.v4.runtime.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,65 +15,40 @@ public class Parse {
 
     public static void main(String[] args) throws Exception {
 
-        /*
+
+
+
         String TestCaseFile = "Test Cases/" + args[0];
         FileInputStream fis = new FileInputStream(new File(TestCaseFile));
         ANTLRInputStream input = new ANTLRInputStream(fis);
         CoolLexer lexer = new CoolLexer(input);
-        TokenStream tokenStream = new CommonTokenStream(lexer);
+        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+        tokenStream.fill();
         CoolParser parser = new CoolParser(tokenStream);
+
+
 
 
         System.out.println(parser.getRuleContext() );
         System.out.println(parser.getCurrentToken());
 
-        */
 
-        //parser.consume();
+        parser.consume();
 
-
+/*
 
         //load all tokens from CoolLexer.tokens
         loadTokens();
 
         //get the token from the .cl-lex input file
+
         getAllTokens("Output/" + args[0]);
 
-        System.out.println(tokenList);
 
 
+        //CommonTokenStream t = new CommonTokenStream(tokenList);
 
-
-        /*
-        FileReader lexFile = new FileReader("Output/" + args[0]);
-        BufferedReader lexFile__bufferedReader = new BufferedReader(lexFile);
-
-        String line = lexFile__bufferedReader.readLine();
-        int lineNum = 1;
-        int currTokenType;
-        String currTokenText;
-        while(line != null && line.charAt(0) != '\''){
-
-            System.out.println(lineNum + ": " + line);
-
-            if(lineNum == 1){
-
-            }else if(lineNum == 2){
-
-            }else{
-
-                lineNum = 0;
-            }
-            line = lexFile__bufferedReader.readLine();
-            lineNum++;
-        }
-
-        lexFile__bufferedReader.close();
-
-
-         */
-
-
+        System.out.println(tokenList);*/
 
 
     }
