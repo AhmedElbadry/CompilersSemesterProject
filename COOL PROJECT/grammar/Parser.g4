@@ -29,7 +29,7 @@ expression
    | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
    | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
    | NEW TYPEID # new
-   | INTEGER_NEGATIVE expression # negative
+   | MINUS expression # negative
    | ISVOID expression # isvoid
    | expression MULTIPLY expression # multiply
    | expression DIVISION expression # division

@@ -16,3 +16,5 @@ https://github.com/antlr/antlr4/blob/master/runtime/Java/src/org/antlr/v4/runtim
 https://dzone.com/articles/creating-dsl-with-antlr4-and-scala
 
 https://github.com/antlr/antlr4/blob/4.6/doc/listeners.md
+
+https://stackoverflow.com/questions/16102540/is-implicit-token-definition-in-parser-rule-something-to-worry-about

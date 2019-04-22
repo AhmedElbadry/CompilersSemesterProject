@@ -39,7 +39,7 @@ public class Parse {
 
         ParseTree tree = parser.program();
         System.out.println("ENDDDDD");
-        System.out.println(tree.getPayload().toStringTree(parser));
+        System.out.println(tree.toStringTree(parser));
 
         /*ParseTree t = parser.program();
         ParseTreePattern p = parser.compileParseTreePattern("<ID>+0", CoolParser.RULE_program);

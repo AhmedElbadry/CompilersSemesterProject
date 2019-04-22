@@ -1,4 +1,4 @@
-// Generated from C:/Users/remon/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Cool.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Cool.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -16,12 +16,12 @@ public class CoolLexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SEMICOLON=1, DARROW=2, LPAREN=3, RPAREN=4, COMMA=5, PLUS=6, MINUS=7, STAR=8, 
-		SLASH=9, TILDE=10, LT=11, LE=12, EQUAL=13, LBRACE=14, RBRACE=15, DOT=16, 
-		ASSIGN=17, ATSYM=18, COLON=19, CASE=20, ESAC=21, IF=22, FI=23, WHILE=24, 
-		THEN=25, ELSE=26, LOOP=27, POOL=28, CLASS=29, IN=30, INHERITS=31, OF=32, 
-		LET=33, NEW=34, ISVOID=35, NOT=36, BOOL_CONST=37, INT=38, TYPEID=39, OBJECTID=40, 
-		STRING=41, WS=42, INVALID=43;
+		SEMICOLON=1, CASE_ARROW=2, LPAREN=3, RPAREN=4, COMMA=5, ADD=6, MINUS=7, 
+		MULTIPLY=8, DIVISION=9, TILDE=10, LESS_THAN=11, LESS_EQUAL=12, EQUAL=13, 
+		LBRACE=14, RBRACE=15, DOT=16, ASSIGNMENT=17, ATSYM=18, COLON=19, CASE=20, 
+		ESAC=21, IF=22, FI=23, WHILE=24, THEN=25, ELSE=26, LOOP=27, POOL=28, CLASS=29, 
+		IN=30, INHERITS=31, OF=32, LET=33, NEW=34, ISVOID=35, NOT=36, BOOL_CONST=37, 
+		INT=38, TYPEID=39, OBJECTID=40, STRING=41, WS=42, INVALID=43;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -32,12 +32,13 @@ public class CoolLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"SEMICOLON", "DARROW", "LPAREN", "RPAREN", "COMMA", "PLUS", "MINUS", 
-			"STAR", "SLASH", "TILDE", "LT", "LE", "EQUAL", "LBRACE", "RBRACE", "DOT", 
-			"ASSIGN", "ATSYM", "COLON", "CASE", "ESAC", "IF", "FI", "WHILE", "THEN", 
-			"ELSE", "LOOP", "POOL", "CLASS", "IN", "INHERITS", "OF", "LET", "NEW", 
-			"ISVOID", "NOT", "SYMBOL", "DIGIT", "LLETTER", "ULETTER", "LETTER", "TRUE", 
-			"FALSE", "BOOL_CONST", "INT", "TYPEID", "OBJECTID", "STRING", "WS", "INVALID"
+			"SEMICOLON", "CASE_ARROW", "LPAREN", "RPAREN", "COMMA", "ADD", "MINUS", 
+			"MULTIPLY", "DIVISION", "TILDE", "LESS_THAN", "LESS_EQUAL", "EQUAL", 
+			"LBRACE", "RBRACE", "DOT", "ASSIGNMENT", "ATSYM", "COLON", "CASE", "ESAC", 
+			"IF", "FI", "WHILE", "THEN", "ELSE", "LOOP", "POOL", "CLASS", "IN", "INHERITS", 
+			"OF", "LET", "NEW", "ISVOID", "NOT", "SYMBOL", "DIGIT", "LLETTER", "ULETTER", 
+			"LETTER", "TRUE", "FALSE", "BOOL_CONST", "INT", "TYPEID", "OBJECTID", 
+			"STRING", "WS", "INVALID"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -51,12 +52,12 @@ public class CoolLexer extends Lexer {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SEMICOLON", "DARROW", "LPAREN", "RPAREN", "COMMA", "PLUS", "MINUS", 
-			"STAR", "SLASH", "TILDE", "LT", "LE", "EQUAL", "LBRACE", "RBRACE", "DOT", 
-			"ASSIGN", "ATSYM", "COLON", "CASE", "ESAC", "IF", "FI", "WHILE", "THEN", 
-			"ELSE", "LOOP", "POOL", "CLASS", "IN", "INHERITS", "OF", "LET", "NEW", 
-			"ISVOID", "NOT", "BOOL_CONST", "INT", "TYPEID", "OBJECTID", "STRING", 
-			"WS", "INVALID"
+			null, "SEMICOLON", "CASE_ARROW", "LPAREN", "RPAREN", "COMMA", "ADD", 
+			"MINUS", "MULTIPLY", "DIVISION", "TILDE", "LESS_THAN", "LESS_EQUAL", 
+			"EQUAL", "LBRACE", "RBRACE", "DOT", "ASSIGNMENT", "ATSYM", "COLON", "CASE", 
+			"ESAC", "IF", "FI", "WHILE", "THEN", "ELSE", "LOOP", "POOL", "CLASS", 
+			"IN", "INHERITS", "OF", "LET", "NEW", "ISVOID", "NOT", "BOOL_CONST", 
+			"INT", "TYPEID", "OBJECTID", "STRING", "WS", "INVALID"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
