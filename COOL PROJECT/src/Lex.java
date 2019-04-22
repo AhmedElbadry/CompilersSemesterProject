@@ -1,4 +1,5 @@
 import java.io.*;
+//import java.util.*;
 import java.io.FileInputStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.Token;
@@ -36,7 +37,7 @@ public class Lex {
 
         /*List xx = lexer.getAllTokens();
         for(Object it : xx) {
-            System.out.println(it + "here");
+            System.out.println(it);
         }*/
 
         Token token = lexer.nextToken();

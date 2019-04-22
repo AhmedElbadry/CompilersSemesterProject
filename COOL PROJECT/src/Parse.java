@@ -1,4 +1,9 @@
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
+import org.antlr.v4.runtime.tree.pattern.ParseTreeMatch;
+import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,14 +31,28 @@ public class Parse {
         tokenStream.fill();
         CoolParser parser = new CoolParser(tokenStream);
 
+        //CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
 
+        //parser.setBuildParseTree(true);
+        //System.out.println(parser.getBuildParseTree());
+        //parser.file();
 
+        ParseTree tree = parser.program();
 
-        System.out.println(parser.getRuleContext() );
-        System.out.println(parser.getCurrentToken());
+        //System.out.println(tree.getChild(1));
+        //ParseTreeWalker walker = new ParseTreeWalker();
+        //walker.walk(new UnicodeConverterListener(), tree);
 
+        /*ParseTree t = parser.program();
+        ParseTreePattern p = parser.compileParseTreePattern("<ID>+0", CoolParser.RULE_program);
+        ParseTreeMatch m = p.match(t);
+        //String id = m.get("ID");
+*/
 
-        parser.consume();
+        //System.out.println(parser.getRuleContext() );
+        //System.out.println(parser.getCurrentToken());
+
+        //parser.consume();
 
 /*
 
