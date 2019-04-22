@@ -38,10 +38,8 @@ public class Parse {
         //parser.file();
 
         ParseTree tree = parser.program();
-
-        //System.out.println(tree.getChild(1));
-        //ParseTreeWalker walker = new ParseTreeWalker();
-        //walker.walk(new UnicodeConverterListener(), tree);
+        System.out.println("ENDDDDD");
+        System.out.println(tree.getPayload().toStringTree(parser));
 
         /*ParseTree t = parser.program();
         ParseTreePattern p = parser.compileParseTreePattern("<ID>+0", CoolParser.RULE_program);
