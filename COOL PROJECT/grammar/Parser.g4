@@ -43,7 +43,6 @@ expression
    | OBJECTID # id
    | INT # int
    | STRING # string
-   | TRUE # true
-   | FALSE # false
+   | BOOL_CONST # TrueOrFlase
    | OBJECTID ASSIGNMENT expression # assignment
    ;

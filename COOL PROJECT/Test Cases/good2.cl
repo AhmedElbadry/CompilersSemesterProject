@@ -11,10 +11,12 @@ class Main inherits IO {
     };
 
     main() : SELF_TYPE {
-        out_string("enter a string ? ");
-        if pal(in_string())
-        then out_string("that was a palindrome\n")
-        else out_string("that was not a palindrome\n")
-        fi;
+        {
+            out_string("enter a string ? ");
+            if pal(in_string())
+            then out_string("that was a palindrome\n")
+            else out_string("that was not a palindrome\n")
+            fi;
+         }
     };
 };
