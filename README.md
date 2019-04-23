@@ -10,16 +10,16 @@ You should be in the `COOL Project` directory
 
 To compile the project:
 
-`javac -cp "dep/antlr4-runtime-4.7.2.jar" src/*.java gen/*.java -d classes`
+`javac -cp "dep/antlr-4.7.2-complete.jar" src/*.java gen/*.java -d classes`
 
 
 To run the lexer on an input file good1.cl
 
-`java -cp "classes;dep/antlr4-runtime-4.7.2.jar" Lex good1.cl`
+`java -cp "classes;dep/antlr-4.7.2-complete.jar" Lex good1.cl`
 
 To run the parser on an input file good1.cl
 
-`java -cp "classes;dep/antlr4-runtime-4.7.2.jar" Parse good1.cl`
+`java -cp "classes;dep/antlr-4.7.2-complete.jar" Parse good1.cl`
 
 ### Phase 1 The Lexer:
 In this phase, we created a lexical analyzer (scanner) using antlr as lexical analyzer generator.

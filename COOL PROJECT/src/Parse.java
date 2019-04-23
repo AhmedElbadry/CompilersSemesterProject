@@ -1,28 +1,24 @@
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.pattern.ParseTreeMatch;
 import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 
-import java.io.BufferedReader;
+import javax.swing.*;
+//import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
+//import java.io.FileReader;
 import java.util.*;
 
 public class Parse {
-
-    public static List<Token> tokenList = new ArrayList();
-    public static String intToStrToken[] = new String[100];
-    public static HashMap<String, Integer> strToIntToken = new HashMap();
-
+    //public static List<Token> tokenList = new ArrayList();
+    //public static String intToStrToken[] = new String[100];
+    //public static HashMap<String, Integer> strToIntToken = new HashMap();
 
     public static void main(String[] args) throws Exception {
-
-
-
-
         String TestCaseFile = "Test Cases/" + args[0];
         FileInputStream fis = new FileInputStream(new File(TestCaseFile));
         ANTLRInputStream input = new ANTLRInputStream(fis);
@@ -31,29 +27,36 @@ public class Parse {
         tokenStream.fill();
         CoolParser parser = new CoolParser(tokenStream);
 
-        //CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
-
-        //parser.setBuildParseTree(true);
-        //System.out.println(parser.getBuildParseTree());
-        //parser.file();
+        /*CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
+        parser.setBuildParseTree(true);
+        System.out.println(parser.getBuildParseTree());
+        parser.file();*/
 
         ParseTree tree = parser.program();
-        System.out.println("ENDDDDD");
-        System.out.println(tree.toStringTree(parser));
+        //System.out.println("ENDDDDD");
+        //System.out.println(tree.toStringTree(parser));
+        //System.out.println(tree.getText());
+        //show AST in GUI
+        JFrame frame = new JFrame("Antlr AST");
+        JPanel panel = new JPanel();
+        TreeViewer viewr = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
+        viewr.open();
+
+/*        Parserlistener listener = new Parserlistener();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(listener,tree);*/
 
         /*ParseTree t = parser.program();
         ParseTreePattern p = parser.compileParseTreePattern("<ID>+0", CoolParser.RULE_program);
         ParseTreeMatch m = p.match(t);
-        //String id = m.get("ID");
-*/
+        String id = m.get("ID");*/
 
         //System.out.println(parser.getRuleContext() );
         //System.out.println(parser.getCurrentToken());
-
         //parser.consume();
 
-/*
 
+        /*
         //load all tokens from CoolLexer.tokens
         loadTokens();
 
@@ -61,16 +64,12 @@ public class Parse {
 
         getAllTokens("Output/" + args[0]);
 
-
-
         //CommonTokenStream t = new CommonTokenStream(tokenList);
 
         System.out.println(tokenList);*/
-
-
     }
 
-    private static void getAllTokens(String filePath) throws Exception{
+    /*private static void getAllTokens(String filePath) throws Exception{
         FileReader lexFile = new FileReader(filePath);
         BufferedReader lexFile__bufferedReader = new BufferedReader(lexFile);
 
@@ -101,9 +100,9 @@ public class Parse {
         lexFile__bufferedReader.close();
         loadTokens();
 
-    }
+    }*/
 
-    private static void loadTokens() throws Exception {
+    /*private static void loadTokens() throws Exception {
         FileReader tokensFile = new FileReader("gen/CoolLexer.tokens");
         BufferedReader bufferedReader = new BufferedReader(tokensFile);
 
@@ -120,5 +119,5 @@ public class Parse {
 
         bufferedReader.close();
     }
-
+*/
 }
