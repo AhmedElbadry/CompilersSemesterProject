@@ -7,42 +7,57 @@ import org.antlr.v4.runtime.tree.pattern.ParseTreeMatch;
 import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 
 import javax.swing.*;
-//import java.io.BufferedReader;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-//import java.io.FileReader;
+import java.io.FileReader;
 import java.util.*;
+import java.io.*;
 
 public class Parse {
+    
     //public static List<Token> tokenList = new ArrayList();
     //public static String intToStrToken[] = new String[100];
     //public static HashMap<String, Integer> strToIntToken = new HashMap();
+    public static BufferedWriter writer ;
 
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
+        try{
         String TestCaseFile = "Test Cases/" + args[0];
+        String OutputFile = "Output/" + args[1];
+
+        File file = new File(OutputFile);
+        file.delete();
+        writer = new BufferedWriter(new FileWriter(OutputFile, true));
+
         FileInputStream fis = new FileInputStream(new File(TestCaseFile));
         ANTLRInputStream input = new ANTLRInputStream(fis);
         CoolLexer lexer = new CoolLexer(input);
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);
         tokenStream.fill();
         CoolParser parser = new CoolParser(tokenStream);
-
+        parser.removeErrorListeners();
+        parser.addErrorListener(new ThrowingErrorListener());
+            
+        //System.out.println(Arrays.asList(parser.getRuleNames()));
         /*CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
         parser.setBuildParseTree(true);
         System.out.println(parser.getBuildParseTree());
         parser.file();*/
 
         ParseTree tree = parser.program();
-        //System.out.println("ENDDDDD");
         //System.out.println(tree.toStringTree(parser));
-        //System.out.println(tree.getText());
-        //show AST in GUI
-        JFrame frame = new JFrame("Antlr AST");
-        JPanel panel = new JPanel();
+        writer.append(tree.toStringTree(parser));
+        writer.close();
+
         TreeViewer viewr = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
         viewr.open();
-
-/*        Parserlistener listener = new Parserlistener();
+        }
+        catch (Exception e){
+            System.err.println(e.getMessage());
+        }
+        /*Parserlistener listener = new Parserlistener();
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(listener,tree);*/
 
