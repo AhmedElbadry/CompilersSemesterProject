@@ -20,11 +20,27 @@ public class AST {
         }
     }
     public static class class_ extends ASTNode {
-        public class_(){
+        public List<feature> features;
+        public class_(List<feature> fl){
+            features = fl;
             //System.out.println("claaaas");
         }
         String getString(String space){
-            return "class_";
+            String str;
+            str = space+"#"+lineNo+"\n"+space+"_class" + features.size();
+            for ( feature f : features ) {
+                str += "\n"+f.getString(space+sp);
+            }
+            return str;
+        }
+    }
+
+    public static class feature extends ASTNode {
+        public feature(){
+            //System.out.println("claaaas");
+        }
+        String getString(String space){
+            return "feature";
         }
     }
 }

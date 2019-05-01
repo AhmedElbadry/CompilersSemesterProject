@@ -20,26 +20,43 @@ programBlocks returns [ArrayList<AST.class_> value]
     	$value = new ArrayList<AST.class_>();
     }
      /*classes*/
-    : (c = classDefine SEMICOLON {$value.add($c.value); System.out.println("list " + $c.value.getString(" "));})+ # classes
+    : (c = classDefine SEMICOLON {$value.add($c.value);})+ # classes
    //| EOF  {System.out.println("EOF " + $value.size());}# eof
    ;
 
 classDefine returns [AST.class_ value]
     /*class without inherit*/
-    : CLASS TYPEID LBRACE (feature SEMICOLON)* RBRACE
+    : CLASS TYPEID LBRACE fl=feature_list RBRACE
     {
-        $value = new AST.class_();
+        $value = new AST.class_($fl.value);
     }
     /*class with inherit*/
-    | CLASS TYPEID INHERITS TYPEID LBRACE (feature SEMICOLON)* RBRACE
+    | CLASS TYPEID INHERITS TYPEID LBRACE fl=feature_list RBRACE
     {
-        $value = new AST.class_();
+        $value = new AST.class_($fl.value);
     }
     ;
 
-feature
-   : OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE # method
-   | OBJECTID COLON TYPEID (ASSIGNMENT expression)? # property
+feature_list returns [ArrayList<AST.feature> value]
+    @init
+    {
+    	$value = new ArrayList<AST.feature>();
+    }
+    : (f=feature SEMICOLON {$value.add($f.value);})*
+
+    ;
+feature returns [AST.feature value]
+    : OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE
+    {
+        $value = new AST.feature();
+    }
+
+    # method
+    | OBJECTID COLON TYPEID (ASSIGNMENT expression)?
+    {
+        $value = new AST.feature();
+    }
+    # property
    ;
 
 formal

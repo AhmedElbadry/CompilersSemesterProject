@@ -42,6 +42,16 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitClassDefine(Parse.ClassDefineContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Parse#feature_list}.
+	 * @param ctx the parse tree
+	 */
+	void enterFeature_list(Parse.Feature_listContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Parse#feature_list}.
+	 * @param ctx the parse tree
+	 */
+	void exitFeature_list(Parse.Feature_listContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code method}
 	 * labeled alternative in {@link Parse#feature}.
 	 * @param ctx the parse tree

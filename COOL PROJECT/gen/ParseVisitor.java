@@ -32,6 +32,12 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassDefine(Parse.ClassDefineContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Parse#feature_list}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFeature_list(Parse.Feature_listContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code method}
 	 * labeled alternative in {@link Parse#feature}.
 	 * @param ctx the parse tree
