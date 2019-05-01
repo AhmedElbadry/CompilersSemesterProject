@@ -46,7 +46,7 @@ public class TestParser {
             System.out.println(parser.getBuildParseTree());
             parser.file();*/
 
-            /*ParseTree tree = parser.program();
+            ParseTree tree = parser.program();
             //System.out.println(tree.toStringTree(parser));
             writer.append(tree.toStringTree(parser));
             writer.close();
@@ -56,12 +56,12 @@ public class TestParser {
 
             Parserlistener listener = new Parserlistener();
             ParseTreeWalker walker = new ParseTreeWalker();
-            walker.walk(listener,tree);*/
+            walker.walk(listener,tree);
 
-            Parse.ProgramContext prog = null;
+            /*Parse.ProgramContext prog = null;
             prog = parser.program();
 
-            System.out.println(prog.value.getString(""));
+            System.out.println(prog.value.getString(""));*/
 
 
 

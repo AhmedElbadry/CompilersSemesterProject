@@ -18,7 +18,7 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(Parse.ProgramContext ctx) { }
+	@Override public void enterProgram(Parse.ProgramContext ctx) {}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -66,7 +66,9 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethod(Parse.MethodContext ctx) { }
+	@Override public void enterMethod(Parse.MethodContext ctx) {
+		System.out.println("asasfsafsafsaf");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
