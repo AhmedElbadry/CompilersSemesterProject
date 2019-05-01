@@ -1,0 +1,1 @@
+(program (programBlocks (classDefine class B { }) ; (programBlocks (classDefine class A inherits B { }) ; (programBlocks (classDefine class Main { }) ; (programBlocks <EOF>)))))

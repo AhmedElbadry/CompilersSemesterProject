@@ -1,6 +1,6 @@
 import org.antlr.v4.runtime.ParserRuleContext;
 
-public class Parserlistener extends CoolBaseListener {
+public class Parserlistener extends ParseBaseListener {
     public static int tabs = 0;
     @Override public void enterEveryRule(ParserRuleContext ctx) {
         //for (int i = 0 ; i < tabs ; i++) System.out.println("\t");
