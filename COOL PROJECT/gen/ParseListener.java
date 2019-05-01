@@ -52,29 +52,35 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitFeature_list(Parse.Feature_listContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code method}
-	 * labeled alternative in {@link Parse#feature}.
+	 * Enter a parse tree produced by {@link Parse#feature}.
+	 * @param ctx the parse tree
+	 */
+	void enterFeature(Parse.FeatureContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Parse#feature}.
+	 * @param ctx the parse tree
+	 */
+	void exitFeature(Parse.FeatureContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Parse#method}.
 	 * @param ctx the parse tree
 	 */
 	void enterMethod(Parse.MethodContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code method}
-	 * labeled alternative in {@link Parse#feature}.
+	 * Exit a parse tree produced by {@link Parse#method}.
 	 * @param ctx the parse tree
 	 */
 	void exitMethod(Parse.MethodContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code property}
-	 * labeled alternative in {@link Parse#feature}.
+	 * Enter a parse tree produced by {@link Parse#decl}.
 	 * @param ctx the parse tree
 	 */
-	void enterProperty(Parse.PropertyContext ctx);
+	void enterDecl(Parse.DeclContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code property}
-	 * labeled alternative in {@link Parse#feature}.
+	 * Exit a parse tree produced by {@link Parse#decl}.
 	 * @param ctx the parse tree
 	 */
-	void exitProperty(Parse.PropertyContext ctx);
+	void exitDecl(Parse.DeclContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Parse#formal}.
 	 * @param ctx the parse tree

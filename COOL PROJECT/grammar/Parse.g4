@@ -46,20 +46,44 @@ feature_list returns [ArrayList<AST.feature> value]
 
     ;
 feature returns [AST.feature value]
-    : OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE
+    : m=method
     {
-        $value = new AST.feature();
+        $value = $m.value;
     }
-
-    # method
-    | OBJECTID COLON TYPEID (ASSIGNMENT expression)?
+    | d=decl
     {
-        $value = new AST.feature();
+        $value = $d.value;
     }
-    # property
    ;
 
+method returns [AST.method value]
+    /*x(): Int {..}*/
+    : OBJECTID LPAREN RPAREN COLON TYPEID LBRACE expression RBRACE
+    {
+        $value = new AST.method();
+    }
+
+    /*x(a, b ..): Int {..}*/
+    |OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE
+    {
+        $value = new AST.method();
+    }
+    ;
+
+decl returns [AST.decl value]
+    /*x: Int*/
+    : OBJECTID COLON TYPEID
+    {
+        $value = new AST.decl();
+    }
+    /*x: Int = expr*/
+    | OBJECTID COLON TYPEID (ASSIGNMENT expression)?
+    {
+        $value = new AST.decl();
+    }
+    ;
 formal
+    /*x: Int*/
    : OBJECTID COLON TYPEID
    ;
 

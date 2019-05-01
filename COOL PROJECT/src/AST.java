@@ -43,4 +43,21 @@ public class AST {
             return "feature";
         }
     }
+
+    public static class method extends feature {
+        public method(){
+            //System.out.println("claaaas");
+        }
+        String getString(String space){
+            return "method";
+        }
+    }
+    public static class decl extends feature {
+        public decl(){
+            //System.out.println("claaaas");
+        }
+        String getString(String space){
+            return "decl";
+        }
+    }
 }

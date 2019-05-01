@@ -18,7 +18,7 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(Parse.ProgramContext ctx) {}
+	@Override public void enterProgram(Parse.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -66,9 +66,19 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethod(Parse.MethodContext ctx) {
-		System.out.println("asasfsafsafsaf");
-	}
+	@Override public void enterFeature(Parse.FeatureContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFeature(Parse.FeatureContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMethod(Parse.MethodContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -80,13 +90,13 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProperty(Parse.PropertyContext ctx) { }
+	@Override public void enterDecl(Parse.DeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProperty(Parse.PropertyContext ctx) { }
+	@Override public void exitDecl(Parse.DeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
