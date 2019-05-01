@@ -42,18 +42,6 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEof(Parse.EofContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitEof(Parse.EofContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterClassDefine(Parse.ClassDefineContext ctx) { }
 	/**
 	 * {@inheritDoc}

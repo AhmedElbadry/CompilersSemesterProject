@@ -32,18 +32,6 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitClasses(Parse.ClassesContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code eof}
-	 * labeled alternative in {@link Parse#programBlocks}.
-	 * @param ctx the parse tree
-	 */
-	void enterEof(Parse.EofContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code eof}
-	 * labeled alternative in {@link Parse#programBlocks}.
-	 * @param ctx the parse tree
-	 */
-	void exitEof(Parse.EofContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Parse#classDefine}.
 	 * @param ctx the parse tree
 	 */

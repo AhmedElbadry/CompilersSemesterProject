@@ -26,13 +26,6 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClasses(Parse.ClassesContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code eof}
-	 * labeled alternative in {@link Parse#programBlocks}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEof(Parse.EofContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Parse#classDefine}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

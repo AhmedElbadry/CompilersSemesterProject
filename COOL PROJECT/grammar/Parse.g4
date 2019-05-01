@@ -7,11 +7,12 @@ options {
 	import java.util.List;
 }
 program returns [AST.program value]
-    : pb = programBlocks
+    : pb = programBlocks EOF
     {
 		$value = new AST.program($pb.value);
 	}
     ;
+
 
 programBlocks returns [ArrayList<AST.class_> value]
     @init
@@ -19,8 +20,8 @@ programBlocks returns [ArrayList<AST.class_> value]
     	$value = new ArrayList<AST.class_>();
     }
      /*classes*/
-    : (c = classDefine SEMICOLON {$value.add($c.value); System.out.println("list size = " + $value.size());})+ # classes
-   | EOF # eof
+    : (c = classDefine SEMICOLON {$value.add($c.value); System.out.println("list " + $c.value.getString(" "));})+ # classes
+   //| EOF  {System.out.println("EOF " + $value.size());}# eof
    ;
 
 classDefine returns [AST.class_ value]
