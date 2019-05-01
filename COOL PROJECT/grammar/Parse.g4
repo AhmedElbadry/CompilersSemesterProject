@@ -3,13 +3,18 @@ parser grammar Parse;
 options {
 	tokenVocab = Lex;
 }
-
-program
-    : programBlocks
+@header{
+	import java.util.List;
+}
+program returns [AST.program value]
+    : pb = programBlocks
+    {
+		$value = new AST.program();
+	}
     ;
 
 programBlocks
-   : classDefine SEMICOLON programBlocks # classes
+   : (classDefine SEMICOLON)+ # classes
    | EOF # eof
    ;
 

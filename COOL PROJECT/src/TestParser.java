@@ -58,6 +58,10 @@ public class TestParser {
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk(listener,tree);
 
+            Parse.ProgramContext prog = null;
+            prog = parser.program();
+
+            System.out.println(prog.value.getString(""));
 
 
 

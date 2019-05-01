@@ -1,4 +1,7 @@
 // Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+
+	import java.util.List;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
