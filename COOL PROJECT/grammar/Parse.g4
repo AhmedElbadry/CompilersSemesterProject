@@ -9,18 +9,32 @@ options {
 program returns [AST.program value]
     : pb = programBlocks
     {
-		$value = new AST.program();
+		$value = new AST.program($pb.value);
 	}
     ;
 
-programBlocks
-   : (classDefine SEMICOLON)+ # classes
+programBlocks returns [ArrayList<AST.class_> value]
+    @init
+    {
+    	$value = new ArrayList<AST.class_>();
+    }
+     /*classes*/
+    : (c = classDefine SEMICOLON {$value.add($c.value); System.out.println("list size = " + $value.size());})+ # classes
    | EOF # eof
    ;
 
-classDefine
-   : CLASS TYPEID (INHERITS TYPEID)? LBRACE (feature SEMICOLON)* RBRACE
-   ;
+classDefine returns [AST.class_ value]
+    /*class without inherit*/
+    : CLASS TYPEID LBRACE (feature SEMICOLON)* RBRACE
+    {
+        $value = new AST.class_();
+    }
+    /*class with inherit*/
+    | CLASS TYPEID INHERITS TYPEID LBRACE (feature SEMICOLON)* RBRACE
+    {
+        $value = new AST.class_();
+    }
+    ;
 
 feature
    : OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE # method
