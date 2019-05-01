@@ -42,15 +42,15 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitClassDefine(Parse.ClassDefineContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Parse#feature_list}.
+	 * Enter a parse tree produced by {@link Parse#featureList}.
 	 * @param ctx the parse tree
 	 */
-	void enterFeature_list(Parse.Feature_listContext ctx);
+	void enterFeatureList(Parse.FeatureListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Parse#feature_list}.
+	 * Exit a parse tree produced by {@link Parse#featureList}.
 	 * @param ctx the parse tree
 	 */
-	void exitFeature_list(Parse.Feature_listContext ctx);
+	void exitFeatureList(Parse.FeatureListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Parse#feature}.
 	 * @param ctx the parse tree
@@ -81,6 +81,16 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDecl(Parse.DeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Parse#formalList}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormalList(Parse.FormalListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Parse#formalList}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormalList(Parse.FormalListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Parse#formal}.
 	 * @param ctx the parse tree

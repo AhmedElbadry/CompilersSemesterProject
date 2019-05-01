@@ -32,11 +32,11 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassDefine(Parse.ClassDefineContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Parse#feature_list}.
+	 * Visit a parse tree produced by {@link Parse#featureList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFeature_list(Parse.Feature_listContext ctx);
+	T visitFeatureList(Parse.FeatureListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Parse#feature}.
 	 * @param ctx the parse tree
@@ -55,6 +55,12 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDecl(Parse.DeclContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Parse#formalList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFormalList(Parse.FormalListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Parse#formal}.
 	 * @param ctx the parse tree

@@ -9,7 +9,7 @@ options {
 program returns [AST.program value]
     : pb = programBlocks EOF
     {
-		$value = new AST.program($pb.value);
+		$value = new AST.program($pb.value, $pb.value.get(0).lineNo);
 	}
     ;
 
@@ -26,18 +26,18 @@ programBlocks returns [ArrayList<AST.class_> value]
 
 classDefine returns [AST.class_ value]
     /*class without inherit*/
-    : CLASS TYPEID LBRACE fl=feature_list RBRACE
+    : c=CLASS n=TYPEID LBRACE fl=featureList RBRACE
     {
-        $value = new AST.class_($fl.value);
+        $value = new AST.class_($n.getText(), "no_inherirts", $fl.value, $c.getLine());
     }
     /*class with inherit*/
-    | CLASS TYPEID INHERITS TYPEID LBRACE fl=feature_list RBRACE
+    | c=CLASS n=TYPEID INHERITS p=TYPEID LBRACE fl=featureList RBRACE
     {
-        $value = new AST.class_($fl.value);
+        $value = new AST.class_($n.getText(), $p.getText(), $fl.value, $c.getLine());
     }
     ;
 
-feature_list returns [ArrayList<AST.feature> value]
+featureList returns [ArrayList<AST.feature> value]
     @init
     {
     	$value = new ArrayList<AST.feature>();
@@ -58,34 +58,46 @@ feature returns [AST.feature value]
 
 method returns [AST.method value]
     /*x(): Int {..}*/
-    : OBJECTID LPAREN RPAREN COLON TYPEID LBRACE expression RBRACE
+    : n=OBJECTID LPAREN RPAREN COLON rt=TYPEID LBRACE expression RBRACE
     {
-        $value = new AST.method();
+        $value = new AST.method($n.getText(), $rt.getText(), new ArrayList<AST.formal>(), $n.getLine());
     }
 
     /*x(a, b ..): Int {..}*/
-    |OBJECTID LPAREN (formal (COMMA formal)*)* RPAREN COLON TYPEID LBRACE expression RBRACE
+    |n=OBJECTID LPAREN fl=formalList RPAREN COLON rt=TYPEID LBRACE expression RBRACE
     {
-        $value = new AST.method();
+        $value = new AST.method($n.getText(), $rt.getText(), $fl.value, $n.getLine());
     }
     ;
 
 decl returns [AST.decl value]
     /*x: Int*/
-    : OBJECTID COLON TYPEID
+    : n=OBJECTID COLON t=TYPEID
     {
-        $value = new AST.decl();
+        $value = new AST.decl($n.getText(), $t.getText(), $n.getLine());
     }
     /*x: Int = expr*/
-    | OBJECTID COLON TYPEID (ASSIGNMENT expression)?
+    | n=OBJECTID COLON t=TYPEID (ASSIGNMENT expression)?
     {
-        $value = new AST.decl();
+        $value = new AST.decl($n.getText(), $t.getText(), $n.getLine());
     }
     ;
-formal
+
+formalList returns [ArrayList<AST.formal> value]
+    @init
+    {
+    	$value = new ArrayList<AST.formal>();
+    }
+    : f=formal {$value.add($f.value);} (COMMA fi=formal {$value.add($fi.value);})*
+
+    ;
+formal returns [AST.formal value]
     /*x: Int*/
-   : OBJECTID COLON TYPEID
-   ;
+    : n=OBJECTID COLON t=TYPEID
+    {
+        $value = new AST.formal($n.getText(), $t.getText());
+    }
+    ;
 
 /* method argument */
 expression

@@ -54,13 +54,13 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFeature_list(Parse.Feature_listContext ctx) { }
+	@Override public void enterFeatureList(Parse.FeatureListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFeature_list(Parse.Feature_listContext ctx) { }
+	@Override public void exitFeatureList(Parse.FeatureListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -97,6 +97,18 @@ public class ParseBaseListener implements ParseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDecl(Parse.DeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFormalList(Parse.FormalListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFormalList(Parse.FormalListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
