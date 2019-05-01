@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.*;
 import java.io.*;
-
+import java.lang.reflect.Field;
 public class Parse {
     
     //public static List<Token> tokenList = new ArrayList();
@@ -24,42 +24,47 @@ public class Parse {
 
     public static void main(String[] args) {
         try{
-        String TestCaseFile = "Test Cases/" + args[0];
-        String OutputFile = "Output/" + args[1];
+            String TestCaseFile = "Test Cases/" + args[0];
+            String OutputFile = "Output/" + args[0] + "-CST";
 
-        File file = new File(OutputFile);
-        file.delete();
-        writer = new BufferedWriter(new FileWriter(OutputFile, true));
+            File file = new File(OutputFile);
+            file.delete();
+            writer = new BufferedWriter(new FileWriter(OutputFile, true));
 
-        FileInputStream fis = new FileInputStream(new File(TestCaseFile));
-        ANTLRInputStream input = new ANTLRInputStream(fis);
-        CoolLexer lexer = new CoolLexer(input);
-        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-        tokenStream.fill();
-        CoolParser parser = new CoolParser(tokenStream);
-        parser.removeErrorListeners();
-        parser.addErrorListener(new ThrowingErrorListener());
-            
-        //System.out.println(Arrays.asList(parser.getRuleNames()));
-        /*CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
-        parser.setBuildParseTree(true);
-        System.out.println(parser.getBuildParseTree());
-        parser.file();*/
+            FileInputStream fis = new FileInputStream(new File(TestCaseFile));
+            ANTLRInputStream input = new ANTLRInputStream(fis);
+            CoolLexer lexer = new CoolLexer(input);
+            CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+            tokenStream.fill();
+            CoolParser parser = new CoolParser(tokenStream);
+            parser.removeErrorListeners();
+            parser.addErrorListener(new ThrowingErrorListener());
 
-        ParseTree tree = parser.program();
-        //System.out.println(tree.toStringTree(parser));
-        writer.append(tree.toStringTree(parser));
-        writer.close();
+            //System.out.println(Arrays.asList(parser.getRuleNames()));
+            /*CoolParser parser = new UnbufferedTokenStream<CommonToken>(lex);
+            parser.setBuildParseTree(true);
+            System.out.println(parser.getBuildParseTree());
+            parser.file();*/
 
-        TreeViewer viewr = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
-        viewr.open();
+            ParseTree tree = parser.program();
+            //System.out.println(tree.toStringTree(parser));
+            writer.append(tree.toStringTree(parser));
+            writer.close();
+
+            TreeViewer viewr = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
+            viewr.open();
+
+            Parserlistener listener = new Parserlistener();
+            ParseTreeWalker walker = new ParseTreeWalker();
+            walker.walk(listener,tree);
+
+
+
         }
         catch (Exception e){
             System.err.println(e.getMessage());
         }
-        /*Parserlistener listener = new Parserlistener();
-        ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(listener,tree);*/
+
 
         /*ParseTree t = parser.program();
         ParseTreePattern p = parser.compileParseTreePattern("<ID>+0", CoolParser.RULE_program);
@@ -135,4 +140,5 @@ public class Parse {
         bufferedReader.close();
     }
 */
+
 }

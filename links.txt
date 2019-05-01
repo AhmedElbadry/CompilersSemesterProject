@@ -18,3 +18,25 @@ https://dzone.com/articles/creating-dsl-with-antlr4-and-scala
 https://github.com/antlr/antlr4/blob/4.6/doc/listeners.md
 
 https://stackoverflow.com/questions/16102540/is-implicit-token-definition-in-parser-rule-something-to-worry-about
+
+https://sukrutrao.github.io/project/cool-compiler/
+
+https://www.stringtemplate.org/
+
+
+
+https://github.com/altairmn/COOL-Compiler
+https://github.com/saksham-mittal/COOL-compiler
+https://github.com/vbsinha/Cool-Compiler
+
+
+https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687062/LLVM
+
+
+https://github.com/cgcastro/Intermediate-code-generation
+
+http://jakubdziworski.github.io/java/2016/04/01/antlr_visitor_vs_listener.html
+
+https://stackoverflow.com/questions/15050137/once-grammar-is-complete-whats-the-best-way-to-walk-an-antlr-v4-tree
+
+https://www.antlr.org/api/Java/org/antlr/v4/runtime/ParserRuleContext.html

@@ -15,13 +15,20 @@ public class CoolBaseListener implements CoolListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(CoolParser.ProgramContext ctx) { }
+	@Override public void enterProgram(CoolParser.ProgramContext ctx) {
+		System.out.println("enter prog");
+		System.out.println(ctx.getClass());
+		System.out.println(ctx.getStart());
+		System.out.println("enter prog");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(CoolParser.ProgramContext ctx) { }
+	@Override public void exitProgram(CoolParser.ProgramContext ctx) {
+		System.out.println("exit prog");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
