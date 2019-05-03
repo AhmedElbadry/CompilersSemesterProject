@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 public class AST {
     public static class ASTNode {
@@ -8,7 +9,8 @@ public class AST {
         }
     }
 
-    public static String prog3AdCode = "";
+    public static ArrayList<String> prog3AdCode = new ArrayList<String>();
+    public static int tCounter = 1;
     public static String sp = "  ";
 
     public static class program extends ASTNode {
@@ -137,6 +139,7 @@ public class AST {
 
     public static class Expression extends ASTNode {
         String type;
+        public String v = "uninitialized";
         public Expression(){
             type = "no_type";
         }
@@ -148,10 +151,13 @@ public class AST {
         int eval(){
             return -999999;
         }
-
-        void gen(){
-
+        String getV(){
+            return v;
         }
+
+
+
+
     }
 
     public static class ArithOp extends Expression {
@@ -159,6 +165,7 @@ public class AST {
         Expression e2;
         String op;
         int res;
+        public String v;
 
         public ArithOp(Expression ee1, Expression ee2, String opp) {
 
@@ -166,6 +173,8 @@ public class AST {
             e2 = ee2;
             op = opp;
             res = this.eval();
+            v = "t" + tCounter++;
+            System.out.println(">>> " +v);
 
             switch (op) {
                 case "+":
@@ -209,20 +218,30 @@ public class AST {
                     return -999999;
             }
         }
+
         void gen(){
             e1.gen();
             e2.gen();
+            String command = type + " " + v + ", " + e1.getV() + ", " + e2.getV();
+
+            prog3AdCode.add(command);
 
 
-
+        }
+        @Override
+        String getV(){
+            return v;
         }
     }
 
     public static class IntConst extends Expression {
         int value;
-        public IntConst(int v){
+        public String v;
+        public IntConst(int vv){
             type = "IntConst";
-            value = v;
+            value = vv;
+            this.v = Integer.toString(value);
+            System.out.println(">>> " +v);
         }
         String getString(String space){
 
@@ -231,8 +250,13 @@ public class AST {
         int eval(){
             return value;
         }
+
         void gen(){
-            prog3AdCode += value;
+            //prog3AdCode.add( Integer.toString(value));
+        }
+        @Override
+        String getV(){
+            return v;
         }
     }
 

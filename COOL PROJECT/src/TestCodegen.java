@@ -46,8 +46,10 @@ public class TestCodegen {
 
             System.out.println(prog.value.getString(""));
             prog.value.gen();
-            System.out.println(AST.prog3AdCode);
-
+            //System.out.println(AST.prog3AdCode);
+            for(String s: AST.prog3AdCode){
+                System.out.println(s);
+            }
 
 
 
