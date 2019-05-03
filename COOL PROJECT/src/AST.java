@@ -321,20 +321,6 @@ public class AST {
             op = opp;
             v = "t" + tCounter++;
 
-            /*switch (op) {
-                case "<":
-                    type = "Less";
-                    break;
-                case "=":
-                    type = "Equal";
-                    break;
-                case "<=":
-                    type = "LEqual";
-                    break;
-                default:
-                    type = "un identified";
-                    break;
-            }*/
         }
 
         String getString(String space) {
@@ -347,6 +333,32 @@ public class AST {
             e.gen();
             String command = v + " = !" + e.getV();
             prog3AdCode.add(command);
+        }
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+    public static class Parentheses extends Expression {
+        Expression e;
+        public String v;
+
+        public Parentheses(Expression ee) {
+            e = ee;
+            v = e.getV();
+        }
+
+        String getString(String space) {
+
+            return "\n" + space + "Expression: type: Parentheses" + "\n"
+                    + space + e.getString(space + sp);
+        }
+
+        void gen(){
+            e.gen();
+            //String command = "( " + e.getV() + " )";
+            //prog3AdCode.add(command);
         }
         @Override
         String getV(){
@@ -393,7 +405,38 @@ public class AST {
         }
     }
 
+    public static class While extends Expression {
+        Expression e1;
+        Expression e2;
+        String before, after;
 
+        public String v;
+        public While(Expression e1, Expression e2){
+            this.e1 = e1;
+            this.e2 = e2;
+            type = "While";
+            before = "BEFORE" + lCounter;
+            after = "AFTER" + lCounter++;
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type;
+        }
+
+        void gen(){
+            prog3AdCode.add(before + ": ");
+            e1.gen();
+            prog3AdCode.add("ifFalse " + e1.getV() + " goto " + after);
+            e2.gen();
+            prog3AdCode.add("goto " + before);
+            prog3AdCode.add(after + ": ");
+        }
+
+        /*@Override
+        String getV(){
+            return v;
+        }*/
+    }
 
 
 

@@ -162,6 +162,18 @@ public class ParseBaseListener implements ParseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterParentheses(Parse.ParenthesesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParentheses(Parse.ParenthesesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMinus(Parse.MinusContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -205,6 +217,18 @@ public class ParseBaseListener implements ParseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLessEqual(Parse.LessEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhile(Parse.WhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile(Parse.WhileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

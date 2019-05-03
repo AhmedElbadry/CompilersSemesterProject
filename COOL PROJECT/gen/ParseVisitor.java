@@ -89,6 +89,13 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitEqual(Parse.EqualContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code parentheses}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParentheses(Parse.ParenthesesContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code minus}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -116,6 +123,13 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitLessEqual(Parse.LessEqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code while}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile(Parse.WhileContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code multiply}
 	 * labeled alternative in {@link Parse#expression}.

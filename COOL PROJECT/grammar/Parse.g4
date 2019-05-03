@@ -112,9 +112,13 @@ expression returns [AST.Expression value]
         $value = new AST.If($e1.value, $e2.value, $e3.value);
     }
     # if
-    /*
-    | WHILE expression LOOP expression POOL # while
-    | LBRACE (expression SEMICOLON) + RBRACE # block
+
+    | WHILE e1=expression LOOP e2=expression POOL
+    {
+        $value = new AST.While($e1.value, $e2.value);
+    }
+    # while
+    /*| LBRACE (expression SEMICOLON) + RBRACE # block
     | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
     | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
     | NEW TYPEID # new
@@ -165,7 +169,13 @@ expression returns [AST.Expression value]
         $value = new AST.LogOp($e.value, $op.getText());
     }
     # boolNot
-    /*| LPAREN expression RPAREN # parentheses
+
+    | LPAREN e=expression RPAREN
+    {
+        $value = new AST.Parentheses($e.value);
+    }
+    # parentheses
+    /*
     | OBJECTID # id
     */
     | i=INT

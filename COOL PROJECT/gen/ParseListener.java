@@ -138,6 +138,18 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitEqual(Parse.EqualContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code parentheses}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterParentheses(Parse.ParenthesesContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parentheses}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitParentheses(Parse.ParenthesesContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code minus}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -185,6 +197,18 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLessEqual(Parse.LessEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code while}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile(Parse.WhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code while}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile(Parse.WhileContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code multiply}
 	 * labeled alternative in {@link Parse#expression}.
