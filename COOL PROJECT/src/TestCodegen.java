@@ -45,6 +45,8 @@ public class TestCodegen {
             prog = parser.program();
 
             System.out.println(prog.value.getString(""));
+            prog.value.gen();
+            System.out.println(AST.prog3AdCode);
 
 
 

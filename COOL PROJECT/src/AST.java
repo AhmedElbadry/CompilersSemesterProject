@@ -2,7 +2,13 @@ import java.util.List;
 public class AST {
     public static class ASTNode {
         int lineNo;
+
+        void gen(){
+
+        }
     }
+
+    public static String prog3AdCode = "";
     public static String sp = "  ";
 
     public static class program extends ASTNode {
@@ -18,6 +24,11 @@ public class AST {
                 str += "\n"+c.getString(space+sp);
             }
             return str;
+        }
+        void gen(){
+            for ( class_ c : classes_ ) {
+                c.gen();
+            }
         }
     }
     public static class class_ extends ASTNode {
@@ -39,6 +50,11 @@ public class AST {
             }
             return str;
         }
+        void gen(){
+            for ( feature f : features ) {
+                f.gen();
+            }
+        }
     }
 
     public static class feature extends ASTNode {
@@ -48,6 +64,9 @@ public class AST {
         String getString(String space){
 
             return space+"feature";
+        }
+        void gen(){
+
         }
     }
 
@@ -77,6 +96,9 @@ public class AST {
             str += "\n" + e.getString(space+sp);
             return str;
         }
+        void gen(){
+            e.gen();
+        }
     }
     public static class decl extends feature {
         String name;
@@ -90,6 +112,9 @@ public class AST {
         String getString(String space){
 
             return space+ "#" + lineNo + " decl:" + name + " type:" + type ;
+        }
+        void gen(){
+
         }
     }
 
@@ -105,6 +130,9 @@ public class AST {
 
             return space + "formal:" + name + " type:" + type;
         }
+        void gen(){
+
+        }
     }
 
     public static class Expression extends ASTNode {
@@ -119,6 +147,10 @@ public class AST {
 
         int eval(){
             return -999999;
+        }
+
+        void gen(){
+
         }
     }
 
@@ -177,6 +209,13 @@ public class AST {
                     return -999999;
             }
         }
+        void gen(){
+            e1.gen();
+            e2.gen();
+
+
+
+        }
     }
 
     public static class IntConst extends Expression {
@@ -191,6 +230,9 @@ public class AST {
         }
         int eval(){
             return value;
+        }
+        void gen(){
+            prog3AdCode += value;
         }
     }
 
