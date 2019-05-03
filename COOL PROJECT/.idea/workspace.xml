@@ -3,45 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4a1033fb-c10a-47aa-b226-c55fb6cc94a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$class_.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$class_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$decl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$decl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$feature.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$feature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$method.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$method.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$program.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/test.cl-CST" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test.cl-CST" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Cases/test.cl" beforeDir="false" afterPath="$PROJECT_DIR$/Test Cases/test.cl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$AddContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$AddContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$AssignmentContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$AssignmentContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$BoolNotContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$BoolNotContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$CaseContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$CaseContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ClassDefineContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ClassDefineContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ClassesContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ClassesContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DeclContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$EqualContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$EqualContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$FeatureContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FeatureContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$FormalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FormalContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$IdContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IdContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$IfContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IfContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IntContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IntContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$IsvoidContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IsvoidContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$LessEqualContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LessEqualContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$LessThanContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LessThanContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$LetInContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LetInContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$MethodCallContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MethodCallContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$MethodContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MethodContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MinusContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MinusContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$NegativeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$NegativeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$NewContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$NewContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$OwnMethodCallContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$OwnMethodCallContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ParenthesesContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ParenthesesContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ProgramBlocksContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ProgramBlocksContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ProgramContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$StringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$StringContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$TrueOrFlaseContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$TrueOrFlaseContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$WhileContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$WhileContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/ParseBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" afterDir="false" />
@@ -54,7 +22,6 @@
       <change beforePath="$PROJECT_DIR$/gen/ParseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/ParseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grammar/Parse.g4" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Parse.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,11 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+            <state relative-caret-position="461">
+              <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
               <folding>
                 <element signature="e#54#88#1" expanded="true" />
               </folding>
@@ -97,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="18" column="5" selection-start-line="18" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="254">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -136,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -227,19 +194,19 @@
         <option value="$PROJECT_DIR$/src/Parserlistener.java" />
         <option value="$PROJECT_DIR$/gen/Parse.java" />
         <option value="$PROJECT_DIR$/test.cl" />
-        <option value="$PROJECT_DIR$/Test Cases/test.cl" />
         <option value="$PROJECT_DIR$/gen/ParseBaseVisitor.java" />
         <option value="$PROJECT_DIR$/src/TestParser.java" />
         <option value="$PROJECT_DIR$/gen/ParseBaseListener.java" />
         <option value="$PROJECT_DIR$/src/TestCodegen.java" />
         <option value="$PROJECT_DIR$/src/AST.java" />
         <option value="$PROJECT_DIR$/grammar/Parse.g4" />
+        <option value="$PROJECT_DIR$/Test Cases/test.cl" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="276" />
-    <option name="y" value="67" />
+    <option name="x" value="153" />
+    <option name="y" value="340" />
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -249,6 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,7 +253,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -294,7 +261,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555092541782" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UNI_LastTerm/compilers/reference/AST-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UNI_LastTerm/compilers/reference/SimpleGrammar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -358,7 +325,7 @@
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.2289644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.29045308" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -373,8 +340,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.34207526" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" visible="true" weight="0.3477765" />
+      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.18928164" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.40935007" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50323623" side_tool="true" weight="0.48574686" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.2177879" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -390,7 +357,7 @@
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.2289644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.23624596" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.29045308" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,8 +372,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.34207526" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.13911061" />
+      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.18928164" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.40935007" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50323623" side_tool="true" weight="0.48574686" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.2177879" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -531,17 +498,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
+    <entry file="file://$PROJECT_DIR$/Test Cases/good1.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        <state relative-caret-position="102">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
+    <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="18" column="5" selection-start-line="18" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
+          <folding>
+            <element signature="e#54#88#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -552,20 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test Cases/good1.cl">
+    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-          <folding>
-            <element signature="e#54#88#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="254">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
