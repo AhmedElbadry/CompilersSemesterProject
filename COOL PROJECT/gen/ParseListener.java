@@ -126,6 +126,18 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitAdd(Parse.AddContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqual(Parse.EqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqual(Parse.EqualContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code minus}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -137,6 +149,42 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMinus(Parse.MinusContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code boolNot}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolNot(Parse.BoolNotContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code boolNot}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolNot(Parse.BoolNotContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThan(Parse.LessThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThan(Parse.LessThanContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessEqual}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessEqual(Parse.LessEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessEqual}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessEqual(Parse.LessEqualContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code multiply}
 	 * labeled alternative in {@link Parse#expression}.

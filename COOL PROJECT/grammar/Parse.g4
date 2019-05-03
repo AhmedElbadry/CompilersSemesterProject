@@ -141,12 +141,31 @@ expression returns [AST.Expression value]
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
     }
     # minus
-    /*
-    | expression LESS_THAN expression # lessThan
-    | expression LESS_EQUAL expression # lessEqual
-    | expression EQUAL expression # equal
-    | NOT expression # boolNot
-    | LPAREN expression RPAREN # parentheses
+
+    | e1=expression op=LESS_THAN e2=expression
+    {
+        $value = new AST.RelOp($e1.value, $e2.value, $op.getText());
+    }
+    # lessThan
+
+    | e1=expression op=LESS_EQUAL e2=expression
+    {
+        $value = new AST.RelOp($e1.value, $e2.value, $op.getText());
+    }
+    # lessEqual
+
+    | e1=expression op=EQUAL e2=expression
+    {
+        $value = new AST.RelOp($e1.value, $e2.value, $op.getText());
+    }
+    # equal
+
+    | op=NOT e=expression
+    {
+        $value = new AST.LogOp($e.value, $op.getText());
+    }
+    # boolNot
+    /*| LPAREN expression RPAREN # parentheses
     | OBJECTID # id
     */
     | i=INT

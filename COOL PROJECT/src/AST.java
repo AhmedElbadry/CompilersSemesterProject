@@ -263,6 +263,97 @@ public class AST {
         }
     }
 
+    public static class RelOp extends Expression {
+        Expression e1;
+        Expression e2;
+        String op;
+        public String v;
+
+        public RelOp(Expression ee1, Expression ee2, String opp) {
+            e1 = ee1;
+            e2 = ee2;
+            op = opp;
+            v = "t" + tCounter++;
+
+            switch (op) {
+                case "<":
+                    type = "Less";
+                    break;
+                case "=":
+                    type = "Equal";
+                    break;
+                case "<=":
+                    type = "LEqual";
+                    break;
+                default:
+                    type = "un identified";
+                    break;
+            }
+        }
+
+        String getString(String space) {
+
+            return "\n" + space + "Expression: type:" + type + "\n"
+                    + space + e1.getString(space + sp) + "\n"
+                    + space + e2.getString(space + sp);
+        }
+
+        void gen(){
+            e1.gen();
+            e2.gen();
+            String command = v + " = " + e1.getV() + " " + op + " " + e2.getV();
+
+            prog3AdCode.add(command);
+        }
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+    public static class LogOp extends Expression {
+        Expression e;
+        String op;
+        public String v;
+
+        public LogOp(Expression ee, String opp) {
+            e = ee;
+            op = opp;
+            v = "t" + tCounter++;
+
+            /*switch (op) {
+                case "<":
+                    type = "Less";
+                    break;
+                case "=":
+                    type = "Equal";
+                    break;
+                case "<=":
+                    type = "LEqual";
+                    break;
+                default:
+                    type = "un identified";
+                    break;
+            }*/
+        }
+
+        String getString(String space) {
+
+            return "\n" + space + "Expression: type: NOT" + "\n"
+                    + space + e.getString(space + sp);
+        }
+
+        void gen(){
+            e.gen();
+            String command = v + " = !" + e.getV();
+            prog3AdCode.add(command);
+        }
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
     public static class If extends Expression {
         Expression e1;
         Expression e2;

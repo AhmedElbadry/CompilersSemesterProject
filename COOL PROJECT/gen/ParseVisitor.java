@@ -82,12 +82,40 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAdd(Parse.AddContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqual(Parse.EqualContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code minus}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMinus(Parse.MinusContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code boolNot}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBoolNot(Parse.BoolNotContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessThan(Parse.LessThanContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lessEqual}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessEqual(Parse.LessEqualContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code multiply}
 	 * labeled alternative in {@link Parse#expression}.
