@@ -11,6 +11,7 @@ public class AST {
 
     public static ArrayList<String> prog3AdCode = new ArrayList<String>();
     public static int tCounter = 1;
+    public static int lCounter = 1;
     public static String sp = "  ";
 
     public static class program extends ASTNode {
@@ -96,6 +97,8 @@ public class AST {
                 str += "\n"+f.getString(space+sp);
             }
             str += "\n" + e.getString(space+sp);
+
+            str += e.getString(space+sp);
             return str;
         }
         void gen(){
@@ -222,7 +225,7 @@ public class AST {
         void gen(){
             e1.gen();
             e2.gen();
-            String command = type + " " + v + ", " + e1.getV() + ", " + e2.getV();
+            String command = v + " = " + e1.getV() + " " + op + " " + e2.getV();
 
             prog3AdCode.add(command);
 
@@ -259,6 +262,47 @@ public class AST {
             return v;
         }
     }
+
+    public static class If extends Expression {
+        Expression e1;
+        Expression e2;
+        Expression e3;
+        String before_else, after_else;
+
+        public String v;
+        public If(Expression e1, Expression e2, Expression e3){
+            this.e1 = e1;
+            this.e2 = e2;
+            this.e3 = e3;
+            type = "If";
+            before_else = "BEFORE" + lCounter;
+            after_else = "AFTER" + lCounter++;
+        }
+
+        String getString(String space){
+
+            return space + "Expression: type:" + type;
+        }
+
+
+        void gen(){
+            e1.gen();
+            prog3AdCode.add("ifFalse " + e1.getV() + " goto " + before_else);
+            e2.gen();
+            prog3AdCode.add("goto " + after_else);
+            prog3AdCode.add(before_else + ": ");
+            e3.gen();
+            prog3AdCode.add(after_else + ": ");
+            //prog3AdCode.add( Integer.toString(value));
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+
 
 
 

@@ -106,7 +106,13 @@ expression returns [AST.Expression value]
    /*
     expression (ATSYM TYPEID)? DOT OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # methodCall
     | OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # ownMethodCall
-    | IF expression THEN expression ELSE expression FI # if
+    */
+    IF e1=expression THEN e2=expression ELSE e3=expression FI
+    {
+        $value = new AST.If($e1.value, $e2.value, $e3.value);
+    }
+    # if
+    /*
     | WHILE expression LOOP expression POOL # while
     | LBRACE (expression SEMICOLON) + RBRACE # block
     | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
@@ -115,7 +121,7 @@ expression returns [AST.Expression value]
     | MINUS expression # negative
     | ISVOID expression # isvoid*/
 
-    e1=expression op=MULTIPLY e2=expression
+    | e1=expression op=MULTIPLY e2=expression
     {
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
     }

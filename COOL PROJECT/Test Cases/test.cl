@@ -1,5 +1,5 @@
 class Main{
    main():Object{
-        1+5*4-9/7
+        if 0+5 then 1+5 else 1+6 fi
    };
 };
