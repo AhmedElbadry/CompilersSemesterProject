@@ -58,15 +58,15 @@ feature returns [AST.feature value]
 
 method returns [AST.method value]
     /*x(): Int {..}*/
-    : n=OBJECTID LPAREN RPAREN COLON rt=TYPEID LBRACE expression RBRACE
+    : n=OBJECTID LPAREN RPAREN COLON rt=TYPEID LBRACE e=expression RBRACE
     {
-        $value = new AST.method($n.getText(), $rt.getText(), new ArrayList<AST.formal>(), $n.getLine());
+        $value = new AST.method($n.getText(), $rt.getText(), new ArrayList<AST.formal>(), $e.value, $n.getLine());
     }
 
     /*x(a, b ..): Int {..}*/
-    |n=OBJECTID LPAREN fl=formalList RPAREN COLON rt=TYPEID LBRACE expression RBRACE
+    |n=OBJECTID LPAREN fl=formalList RPAREN COLON rt=TYPEID LBRACE e=expression RBRACE
     {
-        $value = new AST.method($n.getText(), $rt.getText(), $fl.value, $n.getLine());
+        $value = new AST.method($n.getText(), $rt.getText(), $fl.value, $e.value, $n.getLine());
     }
     ;
 
@@ -100,37 +100,58 @@ formal returns [AST.formal value]
     ;
 
 /* method argument */
-expression
+expression returns [AST.Expression value]
 
    :
    /*
-   expression (ATSYM TYPEID)? DOT OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # methodCall
-   | OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # ownMethodCall
-   | IF expression THEN expression ELSE expression FI # if
-   | WHILE expression LOOP expression POOL # while
-   | LBRACE (expression SEMICOLON) + RBRACE # block
-   | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
-   | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
-   | NEW TYPEID # new
-   | MINUS expression # negative
-   | ISVOID expression # isvoid*/
+    expression (ATSYM TYPEID)? DOT OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # methodCall
+    | OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # ownMethodCall
+    | IF expression THEN expression ELSE expression FI # if
+    | WHILE expression LOOP expression POOL # while
+    | LBRACE (expression SEMICOLON) + RBRACE # block
+    | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
+    | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
+    | NEW TYPEID # new
+    | MINUS expression # negative
+    | ISVOID expression # isvoid*/
 
-   expression MULTIPLY expression # multiply
-   | expression DIVISION expression # division
-   | expression ADD expression # add
-   | expression MINUS expression # minus
-   /*
-   | expression LESS_THAN expression # lessThan
-   | expression LESS_EQUAL expression # lessEqual
-   | expression EQUAL expression # equal
-   | NOT expression # boolNot
-   | LPAREN expression RPAREN # parentheses
-   | OBJECTID # id
-   */
-   | INT # int
-   /*
-   | STRING # string
-   | BOOL_CONST # TrueOrFlase
-   | OBJECTID ASSIGNMENT expression # assignment
-   */
-   ;
+    e1=expression op=MULTIPLY e2=expression
+    {
+        $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
+    }
+    # multiply
+    | e1=expression op=DIVISION e2=expression
+    {
+        $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
+    }
+    # division
+    | e1=expression op=ADD e2=expression
+    {
+        $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
+    }
+    # add
+    | e1=expression op=MINUS e2=expression
+    {
+        $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
+    }
+    # minus
+    /*
+    | expression LESS_THAN expression # lessThan
+    | expression LESS_EQUAL expression # lessEqual
+    | expression EQUAL expression # equal
+    | NOT expression # boolNot
+    | LPAREN expression RPAREN # parentheses
+    | OBJECTID # id
+    */
+    | i=INT
+    {
+        $value = new AST.IntConst(Integer.parseInt($i.getText()));
+    }
+
+    # int
+    /*
+    | STRING # string
+    | BOOL_CONST # TrueOrFlase
+    | OBJECTID ASSIGNMENT expression # assignment
+    */
+    ;

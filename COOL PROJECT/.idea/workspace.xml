@@ -2,26 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1033fb-c10a-47aa-b226-c55fb6cc94a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/classes/AST$Add.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/AST$ArithOp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/AST$Expression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/AST$IntConst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/test.cl-CST" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test.cl-CST" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test Cases/test.cl" beforeDir="false" afterPath="$PROJECT_DIR$/Test Cases/test.cl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AST$decl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$decl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AST$formal.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$formal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AST$method.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$method.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AST.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$AddContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$AddContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DeclContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$FormalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FormalContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$FormalListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FormalListContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IntContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IntContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$MethodContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MethodContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MinusContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MinusContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ParseBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ParseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ParseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Parse.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Parse.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Parse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/ParseBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/ParseBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/ParseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/ParseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grammar/Parse.g4" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Parse.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
+            <state relative-caret-position="308">
+              <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
               <folding>
                 <element signature="e#54#88#1" expanded="true" />
               </folding>
@@ -64,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
@@ -85,8 +90,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            <state relative-caret-position="327">
+              <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
+              <folding>
+                <element signature="e#3227#3228#0" expanded="true" />
+                <element signature="e#3267#3268#0" expanded="true" />
+                <element signature="e#3398#3399#0" expanded="true" />
+                <element signature="e#3429#3430#0" expanded="true" />
+                <element signature="e#5098#5099#0" expanded="true" />
+                <element signature="e#5132#5133#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TestCodegen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -103,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="68">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -120,8 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FI</find>
-      <find>ELSE</find>
       <find>WHILE</find>
       <find>LOOP</find>
       <find>POOL</find>
@@ -150,11 +170,14 @@
       <find>classes</find>
       <find>parser.program();</find>
       <find>ATSYM</find>
+      <find>expression</find>
+      <find>getString</find>
     </findStrings>
     <replaceStrings>
       <replace>CoolLexer</replace>
       <replace>lexFile</replace>
       <replace>Lex</replace>
+      <replace>Expression</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -198,9 +221,9 @@
         <option value="$PROJECT_DIR$/src/TestParser.java" />
         <option value="$PROJECT_DIR$/gen/ParseBaseListener.java" />
         <option value="$PROJECT_DIR$/src/TestCodegen.java" />
-        <option value="$PROJECT_DIR$/src/AST.java" />
-        <option value="$PROJECT_DIR$/grammar/Parse.g4" />
         <option value="$PROJECT_DIR$/Test Cases/test.cl" />
+        <option value="$PROJECT_DIR$/grammar/Parse.g4" />
+        <option value="$PROJECT_DIR$/src/AST.java" />
       </list>
     </option>
   </component>
@@ -323,7 +346,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.29045308" />
@@ -340,12 +362,12 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.18928164" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.40935007" />
+      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.33979475" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.08437856" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50323623" side_tool="true" weight="0.48574686" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.2177879" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="13" sideWeight="0.49919093" weight="0.17673889" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -357,7 +379,7 @@
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.23624596" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" sideWeight="0.5017007" side_tool="true" weight="0.29045308" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -372,10 +394,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.18928164" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" weight="0.40935007" />
+      <window_info anchor="bottom" id="Tool Output" order="8" weight="0.33979475" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49676377" visible="true" weight="0.4435576" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50323623" side_tool="true" weight="0.48574686" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.2177879" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="11" sideWeight="0.49919093" weight="0.27936146" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -490,7 +512,13 @@
     <entry file="file://$PROJECT_DIR$/gen/ParseBaseVisitor.java" />
     <entry file="file://$PROJECT_DIR$/gen/ParseBaseListener.java" />
     <entry file="file://$PROJECT_DIR$/src/TestParser.java" />
-    <entry file="file://$PROJECT_DIR$/src/TestCodegen.java" />
+    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parserlistener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -507,15 +535,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
+        <state relative-caret-position="308">
+          <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
           <folding>
             <element signature="e#54#88#1" expanded="true" />
           </folding>
@@ -524,15 +552,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        <state relative-caret-position="327">
+          <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
+          <folding>
+            <element signature="e#3227#3228#0" expanded="true" />
+            <element signature="e#3267#3268#0" expanded="true" />
+            <element signature="e#3398#3399#0" expanded="true" />
+            <element signature="e#3429#3430#0" expanded="true" />
+            <element signature="e#5098#5099#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
+    <entry file="file://$PROJECT_DIR$/src/TestCodegen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="17">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>

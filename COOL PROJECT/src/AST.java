@@ -55,10 +55,12 @@ public class AST {
         String name;
         String retType;
         public List<formal> formals;
-        public method(String n, String rt, List<formal> fl, int l){
+        Expression e;
+        public method(String n, String rt, List<formal> fl, Expression ee, int l){
             name = n;
             retType = rt;
             formals = fl;
+            e = ee;
             lineNo = l;
             //System.out.println("claaaas");
         }
@@ -72,6 +74,7 @@ public class AST {
             for ( formal f : formals ) {
                 str += "\n"+f.getString(space+sp);
             }
+            str += "\n" + e.getString(space+sp);
             return str;
         }
     }
@@ -103,5 +106,96 @@ public class AST {
             return space + "formal:" + name + " type:" + type;
         }
     }
+
+    public static class Expression extends ASTNode {
+        String type;
+        public Expression(){
+            type = "no_type";
+        }
+        String getString(String space){
+
+            return space + "Expression: type:" + type;
+        }
+
+        int eval(){
+            return -999999;
+        }
+    }
+
+    public static class ArithOp extends Expression {
+        Expression e1;
+        Expression e2;
+        String op;
+        int res;
+
+        public ArithOp(Expression ee1, Expression ee2, String opp) {
+
+            e1 = ee1;
+            e2 = ee2;
+            op = opp;
+            res = this.eval();
+
+            switch (op) {
+                case "+":
+                    type = "Add";
+                    break;
+                case "-":
+                    type = "Sub";
+                    break;
+                case "*":
+                    type = "Mul";
+                    break;
+                case "/":
+                    type = "Div";
+                    break;
+                default:
+                    type = "un identified";
+                    break;
+
+            }
+        }
+
+        String getString(String space) {
+
+            return "\n" + space + "Expression: type:" + type + "\n"
+                    + space + e1.getString(space + sp) + "\n"
+                    + space + e2.getString(space + sp) + "\n"
+                    + space + "result = " + res;
+        }
+
+        int eval() {
+            switch (op) {
+                case "+":
+                    return e1.eval() + e2.eval();
+                case "-":
+                    return e1.eval() - e2.eval();
+                case "*":
+                    return e1.eval() * e2.eval();
+                case "/":
+                    return e1.eval() / e2.eval();
+                default:
+                    return -999999;
+            }
+        }
+    }
+
+    public static class IntConst extends Expression {
+        int value;
+        public IntConst(int v){
+            type = "IntConst";
+            value = v;
+        }
+        String getString(String space){
+
+            return space + "Expression: type:" + type + " value = " + value;
+        }
+        int eval(){
+            return value;
+        }
+    }
+
+
+
+
 
 }

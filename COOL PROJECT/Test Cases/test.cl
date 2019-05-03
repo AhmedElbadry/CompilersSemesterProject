@@ -1,5 +1,5 @@
 class Main{
    main():Object{
-        1+1-5*3/5
+        1+5*4-9/7
    };
 };

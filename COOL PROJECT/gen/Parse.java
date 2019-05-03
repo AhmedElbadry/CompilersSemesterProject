@@ -480,17 +480,18 @@ public class Parse extends Parser {
 		public AST.method value;
 		public Token n;
 		public Token rt;
+		public ExpressionContext e;
 		public FormalListContext fl;
 		public TerminalNode LPAREN() { return getToken(Parse.LPAREN, 0); }
 		public TerminalNode RPAREN() { return getToken(Parse.RPAREN, 0); }
 		public TerminalNode COLON() { return getToken(Parse.COLON, 0); }
 		public TerminalNode LBRACE() { return getToken(Parse.LBRACE, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
 		public TerminalNode RBRACE() { return getToken(Parse.RBRACE, 0); }
 		public TerminalNode OBJECTID() { return getToken(Parse.OBJECTID, 0); }
 		public TerminalNode TYPEID() { return getToken(Parse.TYPEID, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
 		public FormalListContext formalList() {
 			return getRuleContext(FormalListContext.class,0);
 		}
@@ -536,11 +537,11 @@ public class Parse extends Parser {
 				setState(72);
 				match(LBRACE);
 				setState(73);
-				expression(0);
+				((MethodContext)_localctx).e = expression(0);
 				setState(74);
 				match(RBRACE);
 
-				        ((MethodContext)_localctx).value =  new AST.method(((MethodContext)_localctx).n.getText(), ((MethodContext)_localctx).rt.getText(), new ArrayList<AST.formal>(), ((MethodContext)_localctx).n.getLine());
+				        ((MethodContext)_localctx).value =  new AST.method(((MethodContext)_localctx).n.getText(), ((MethodContext)_localctx).rt.getText(), new ArrayList<AST.formal>(), ((MethodContext)_localctx).e.value, ((MethodContext)_localctx).n.getLine());
 				    
 				}
 				break;
@@ -562,11 +563,11 @@ public class Parse extends Parser {
 				setState(83);
 				match(LBRACE);
 				setState(84);
-				expression(0);
+				((MethodContext)_localctx).e = expression(0);
 				setState(85);
 				match(RBRACE);
 
-				        ((MethodContext)_localctx).value =  new AST.method(((MethodContext)_localctx).n.getText(), ((MethodContext)_localctx).rt.getText(), ((MethodContext)_localctx).fl.value, ((MethodContext)_localctx).n.getLine());
+				        ((MethodContext)_localctx).value =  new AST.method(((MethodContext)_localctx).n.getText(), ((MethodContext)_localctx).rt.getText(), ((MethodContext)_localctx).fl.value, ((MethodContext)_localctx).e.value, ((MethodContext)_localctx).n.getLine());
 				    
 				}
 				break;
@@ -805,6 +806,7 @@ public class Parse extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
+		public AST.Expression value;
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -813,9 +815,13 @@ public class Parse extends Parser {
 		public ExpressionContext() { }
 		public void copyFrom(ExpressionContext ctx) {
 			super.copyFrom(ctx);
+			this.value = ctx.value;
 		}
 	}
 	public static class DivisionContext extends ExpressionContext {
+		public ExpressionContext e1;
+		public Token op;
+		public ExpressionContext e2;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -839,6 +845,9 @@ public class Parse extends Parser {
 		}
 	}
 	public static class AddContext extends ExpressionContext {
+		public ExpressionContext e1;
+		public Token op;
+		public ExpressionContext e2;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -862,6 +871,9 @@ public class Parse extends Parser {
 		}
 	}
 	public static class MinusContext extends ExpressionContext {
+		public ExpressionContext e1;
+		public Token op;
+		public ExpressionContext e2;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -885,6 +897,9 @@ public class Parse extends Parser {
 		}
 	}
 	public static class MultiplyContext extends ExpressionContext {
+		public ExpressionContext e1;
+		public Token op;
+		public ExpressionContext e2;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -908,6 +923,7 @@ public class Parse extends Parser {
 		}
 	}
 	public static class IntContext extends ExpressionContext {
+		public Token i;
 		public TerminalNode INT() { return getToken(Parse.INT, 0); }
 		public IntContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -946,10 +962,13 @@ public class Parse extends Parser {
 			_prevctx = _localctx;
 
 			setState(121);
-			match(INT);
+			((IntContext)_localctx).i = match(INT);
+
+			        ((IntContext)_localctx).value =  new AST.IntConst(Integer.parseInt(((IntContext)_localctx).i.getText()));
+			    
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(137);
+			setState(146);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -957,61 +976,77 @@ public class Parse extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(135);
+					setState(144);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MultiplyContext(new ExpressionContext(_parentctx, _parentState));
+						((MultiplyContext)_localctx).e1 = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(123);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(124);
-						match(MULTIPLY);
+						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(125);
-						expression(6);
+						((MultiplyContext)_localctx).op = match(MULTIPLY);
+						setState(126);
+						((MultiplyContext)_localctx).e2 = expression(6);
+
+						                  ((MultiplyContext)_localctx).value =  new AST.ArithOp(((MultiplyContext)_localctx).e1.value, ((MultiplyContext)_localctx).e2.value, ((MultiplyContext)_localctx).op.getText());
+						              
 						}
 						break;
 					case 2:
 						{
 						_localctx = new DivisionContext(new ExpressionContext(_parentctx, _parentState));
+						((DivisionContext)_localctx).e1 = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(126);
+						setState(129);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(127);
-						match(DIVISION);
-						setState(128);
-						expression(5);
+						setState(130);
+						((DivisionContext)_localctx).op = match(DIVISION);
+						setState(131);
+						((DivisionContext)_localctx).e2 = expression(5);
+
+						                  ((DivisionContext)_localctx).value =  new AST.ArithOp(((DivisionContext)_localctx).e1.value, ((DivisionContext)_localctx).e2.value, ((DivisionContext)_localctx).op.getText());
+						              
 						}
 						break;
 					case 3:
 						{
 						_localctx = new AddContext(new ExpressionContext(_parentctx, _parentState));
+						((AddContext)_localctx).e1 = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(129);
+						setState(134);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(130);
-						match(ADD);
-						setState(131);
-						expression(4);
+						setState(135);
+						((AddContext)_localctx).op = match(ADD);
+						setState(136);
+						((AddContext)_localctx).e2 = expression(4);
+
+						                  ((AddContext)_localctx).value =  new AST.ArithOp(((AddContext)_localctx).e1.value, ((AddContext)_localctx).e2.value, ((AddContext)_localctx).op.getText());
+						              
 						}
 						break;
 					case 4:
 						{
 						_localctx = new MinusContext(new ExpressionContext(_parentctx, _parentState));
+						((MinusContext)_localctx).e1 = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(132);
+						setState(139);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(133);
-						match(MINUS);
-						setState(134);
-						expression(3);
+						setState(140);
+						((MinusContext)_localctx).op = match(MINUS);
+						setState(141);
+						((MinusContext)_localctx).e2 = expression(3);
+
+						                  ((MinusContext)_localctx).value =  new AST.ArithOp(((MinusContext)_localctx).e1.value, ((MinusContext)_localctx).e2.value, ((MinusContext)_localctx).op.getText());
+						              
 						}
 						break;
 					}
 					} 
 				}
-				setState(139);
+				setState(148);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			}
@@ -1050,7 +1085,7 @@ public class Parse extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-\u008f\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3-\u0098\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\6\3\37\n\3\r\3\16\3 \3\4\3\4\3\4\3"+
 		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\63\n\4\3\5\3\5"+
@@ -1059,33 +1094,36 @@ public class Parse extends Parser {
 		"\7\3\7\3\7\5\7[\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\bf\n\b\3\b\5"+
 		"\bi\n\b\3\t\3\t\3\t\3\t\3\t\3\t\7\tq\n\t\f\t\16\tt\13\t\3\n\3\n\3\n\3"+
 		"\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\7\13\u008a\n\13\f\13\16\13\u008d\13\13\3\13\2\3\24\f\2\4\6"+
-		"\b\n\f\16\20\22\24\2\2\2\u0090\2\26\3\2\2\2\4\36\3\2\2\2\6\62\3\2\2\2"+
-		"\b:\3\2\2\2\nC\3\2\2\2\fZ\3\2\2\2\16h\3\2\2\2\20j\3\2\2\2\22u\3\2\2\2"+
-		"\24z\3\2\2\2\26\27\5\4\3\2\27\30\7\2\2\3\30\31\b\2\1\2\31\3\3\2\2\2\32"+
-		"\33\5\6\4\2\33\34\7\3\2\2\34\35\b\3\1\2\35\37\3\2\2\2\36\32\3\2\2\2\37"+
-		" \3\2\2\2 \36\3\2\2\2 !\3\2\2\2!\5\3\2\2\2\"#\7\37\2\2#$\7)\2\2$%\7\20"+
-		"\2\2%&\5\b\5\2&\'\7\21\2\2\'(\b\4\1\2(\63\3\2\2\2)*\7\37\2\2*+\7)\2\2"+
-		"+,\7!\2\2,-\7)\2\2-.\7\20\2\2./\5\b\5\2/\60\7\21\2\2\60\61\b\4\1\2\61"+
-		"\63\3\2\2\2\62\"\3\2\2\2\62)\3\2\2\2\63\7\3\2\2\2\64\65\5\n\6\2\65\66"+
-		"\7\3\2\2\66\67\b\5\1\2\679\3\2\2\28\64\3\2\2\29<\3\2\2\2:8\3\2\2\2:;\3"+
-		"\2\2\2;\t\3\2\2\2<:\3\2\2\2=>\5\f\7\2>?\b\6\1\2?D\3\2\2\2@A\5\16\b\2A"+
-		"B\b\6\1\2BD\3\2\2\2C=\3\2\2\2C@\3\2\2\2D\13\3\2\2\2EF\7*\2\2FG\7\5\2\2"+
-		"GH\7\6\2\2HI\7\25\2\2IJ\7)\2\2JK\7\20\2\2KL\5\24\13\2LM\7\21\2\2MN\b\7"+
-		"\1\2N[\3\2\2\2OP\7*\2\2PQ\7\5\2\2QR\5\20\t\2RS\7\6\2\2ST\7\25\2\2TU\7"+
-		")\2\2UV\7\20\2\2VW\5\24\13\2WX\7\21\2\2XY\b\7\1\2Y[\3\2\2\2ZE\3\2\2\2"+
-		"ZO\3\2\2\2[\r\3\2\2\2\\]\7*\2\2]^\7\25\2\2^_\7)\2\2_i\b\b\1\2`a\7*\2\2"+
-		"ab\7\25\2\2be\7)\2\2cd\7\23\2\2df\5\24\13\2ec\3\2\2\2ef\3\2\2\2fg\3\2"+
-		"\2\2gi\b\b\1\2h\\\3\2\2\2h`\3\2\2\2i\17\3\2\2\2jk\5\22\n\2kr\b\t\1\2l"+
-		"m\7\7\2\2mn\5\22\n\2no\b\t\1\2oq\3\2\2\2pl\3\2\2\2qt\3\2\2\2rp\3\2\2\2"+
-		"rs\3\2\2\2s\21\3\2\2\2tr\3\2\2\2uv\7*\2\2vw\7\25\2\2wx\7)\2\2xy\b\n\1"+
-		"\2y\23\3\2\2\2z{\b\13\1\2{|\7(\2\2|\u008b\3\2\2\2}~\f\7\2\2~\177\7\n\2"+
-		"\2\177\u008a\5\24\13\b\u0080\u0081\f\6\2\2\u0081\u0082\7\13\2\2\u0082"+
-		"\u008a\5\24\13\7\u0083\u0084\f\5\2\2\u0084\u0085\7\b\2\2\u0085\u008a\5"+
-		"\24\13\6\u0086\u0087\f\4\2\2\u0087\u0088\7\t\2\2\u0088\u008a\5\24\13\5"+
-		"\u0089}\3\2\2\2\u0089\u0080\3\2\2\2\u0089\u0083\3\2\2\2\u0089\u0086\3"+
-		"\2\2\2\u008a\u008d\3\2\2\2\u008b\u0089\3\2\2\2\u008b\u008c\3\2\2\2\u008c"+
-		"\25\3\2\2\2\u008d\u008b\3\2\2\2\f \62:CZehr\u0089\u008b";
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\7\13\u0093\n\13"+
+		"\f\13\16\13\u0096\13\13\3\13\2\3\24\f\2\4\6\b\n\f\16\20\22\24\2\2\2\u0099"+
+		"\2\26\3\2\2\2\4\36\3\2\2\2\6\62\3\2\2\2\b:\3\2\2\2\nC\3\2\2\2\fZ\3\2\2"+
+		"\2\16h\3\2\2\2\20j\3\2\2\2\22u\3\2\2\2\24z\3\2\2\2\26\27\5\4\3\2\27\30"+
+		"\7\2\2\3\30\31\b\2\1\2\31\3\3\2\2\2\32\33\5\6\4\2\33\34\7\3\2\2\34\35"+
+		"\b\3\1\2\35\37\3\2\2\2\36\32\3\2\2\2\37 \3\2\2\2 \36\3\2\2\2 !\3\2\2\2"+
+		"!\5\3\2\2\2\"#\7\37\2\2#$\7)\2\2$%\7\20\2\2%&\5\b\5\2&\'\7\21\2\2\'(\b"+
+		"\4\1\2(\63\3\2\2\2)*\7\37\2\2*+\7)\2\2+,\7!\2\2,-\7)\2\2-.\7\20\2\2./"+
+		"\5\b\5\2/\60\7\21\2\2\60\61\b\4\1\2\61\63\3\2\2\2\62\"\3\2\2\2\62)\3\2"+
+		"\2\2\63\7\3\2\2\2\64\65\5\n\6\2\65\66\7\3\2\2\66\67\b\5\1\2\679\3\2\2"+
+		"\28\64\3\2\2\29<\3\2\2\2:8\3\2\2\2:;\3\2\2\2;\t\3\2\2\2<:\3\2\2\2=>\5"+
+		"\f\7\2>?\b\6\1\2?D\3\2\2\2@A\5\16\b\2AB\b\6\1\2BD\3\2\2\2C=\3\2\2\2C@"+
+		"\3\2\2\2D\13\3\2\2\2EF\7*\2\2FG\7\5\2\2GH\7\6\2\2HI\7\25\2\2IJ\7)\2\2"+
+		"JK\7\20\2\2KL\5\24\13\2LM\7\21\2\2MN\b\7\1\2N[\3\2\2\2OP\7*\2\2PQ\7\5"+
+		"\2\2QR\5\20\t\2RS\7\6\2\2ST\7\25\2\2TU\7)\2\2UV\7\20\2\2VW\5\24\13\2W"+
+		"X\7\21\2\2XY\b\7\1\2Y[\3\2\2\2ZE\3\2\2\2ZO\3\2\2\2[\r\3\2\2\2\\]\7*\2"+
+		"\2]^\7\25\2\2^_\7)\2\2_i\b\b\1\2`a\7*\2\2ab\7\25\2\2be\7)\2\2cd\7\23\2"+
+		"\2df\5\24\13\2ec\3\2\2\2ef\3\2\2\2fg\3\2\2\2gi\b\b\1\2h\\\3\2\2\2h`\3"+
+		"\2\2\2i\17\3\2\2\2jk\5\22\n\2kr\b\t\1\2lm\7\7\2\2mn\5\22\n\2no\b\t\1\2"+
+		"oq\3\2\2\2pl\3\2\2\2qt\3\2\2\2rp\3\2\2\2rs\3\2\2\2s\21\3\2\2\2tr\3\2\2"+
+		"\2uv\7*\2\2vw\7\25\2\2wx\7)\2\2xy\b\n\1\2y\23\3\2\2\2z{\b\13\1\2{|\7("+
+		"\2\2|}\b\13\1\2}\u0094\3\2\2\2~\177\f\7\2\2\177\u0080\7\n\2\2\u0080\u0081"+
+		"\5\24\13\b\u0081\u0082\b\13\1\2\u0082\u0093\3\2\2\2\u0083\u0084\f\6\2"+
+		"\2\u0084\u0085\7\13\2\2\u0085\u0086\5\24\13\7\u0086\u0087\b\13\1\2\u0087"+
+		"\u0093\3\2\2\2\u0088\u0089\f\5\2\2\u0089\u008a\7\b\2\2\u008a\u008b\5\24"+
+		"\13\6\u008b\u008c\b\13\1\2\u008c\u0093\3\2\2\2\u008d\u008e\f\4\2\2\u008e"+
+		"\u008f\7\t\2\2\u008f\u0090\5\24\13\5\u0090\u0091\b\13\1\2\u0091\u0093"+
+		"\3\2\2\2\u0092~\3\2\2\2\u0092\u0083\3\2\2\2\u0092\u0088\3\2\2\2\u0092"+
+		"\u008d\3\2\2\2\u0093\u0096\3\2\2\2\u0094\u0092\3\2\2\2\u0094\u0095\3\2"+
+		"\2\2\u0095\25\3\2\2\2\u0096\u0094\3\2\2\2\f \62:CZehr\u0092\u0094";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
