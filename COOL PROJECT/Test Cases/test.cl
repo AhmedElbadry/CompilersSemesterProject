@@ -1,6 +1,8 @@
 class Main{
    main():Object{
-        while (5<3) loop 5+3 pool
+
+        x<-2+3+5+1
+
 
    };
 };

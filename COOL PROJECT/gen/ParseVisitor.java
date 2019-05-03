@@ -68,26 +68,12 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFormal(Parse.FormalContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code division}
-	 * labeled alternative in {@link Parse#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDivision(Parse.DivisionContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code add}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAdd(Parse.AddContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code equal}
-	 * labeled alternative in {@link Parse#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEqual(Parse.EqualContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parentheses}
 	 * labeled alternative in {@link Parse#expression}.
@@ -103,6 +89,41 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMinus(Parse.MinusContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code assignment}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignment(Parse.AssignmentContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code while}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile(Parse.WhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code int}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInt(Parse.IntContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code division}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivision(Parse.DivisionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqual(Parse.EqualContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code boolNot}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -117,19 +138,19 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLessThan(Parse.LessThanContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code id}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitId(Parse.IdContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code lessEqual}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitLessEqual(Parse.LessEqualContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code while}
-	 * labeled alternative in {@link Parse#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWhile(Parse.WhileContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code multiply}
 	 * labeled alternative in {@link Parse#expression}.
@@ -144,11 +165,4 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIf(Parse.IfContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code int}
-	 * labeled alternative in {@link Parse#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInt(Parse.IntContext ctx);
 }

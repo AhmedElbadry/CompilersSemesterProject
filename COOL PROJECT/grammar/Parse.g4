@@ -175,9 +175,13 @@ expression returns [AST.Expression value]
         $value = new AST.Parentheses($e.value);
     }
     # parentheses
-    /*
-    | OBJECTID # id
-    */
+
+    | i=OBJECTID
+    {
+        $value = new AST.ObId($i.getText());
+    }
+    # id
+
     | i=INT
     {
         $value = new AST.IntConst(Integer.parseInt($i.getText()));
@@ -187,6 +191,11 @@ expression returns [AST.Expression value]
     /*
     | STRING # string
     | BOOL_CONST # TrueOrFlase
-    | OBJECTID ASSIGNMENT expression # assignment
     */
+    | i=OBJECTID ASSIGNMENT e=expression
+    {
+        $value = new AST.Assign($i.getText(), $e.value);
+    }
+    # assignment
+
     ;

@@ -438,8 +438,51 @@ public class AST {
         }*/
     }
 
+    public static class ObId extends Expression {
+        public String v;
+        public ObId(String v){
+            type = "ObId";
+            this.v = v;
+
+        }
+        String getString(String space){
+
+            return space + "Expression: type:" + type + " value = " + v;
+        }
 
 
+        void gen(){
+
+        }
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+    public static class Assign extends Expression {
+        public String v;
+        Expression e;
+
+        public Assign(String v, Expression e){
+            type = "Ob_Assign";
+            this.v = v;
+            this.e = e;
+        }
+        String getString(String space){
+
+            return space + "Expression: type:" + type + " value = " + v;
+        }
+
+
+        void gen(){
+            e.gen();
+            prog3AdCode.add(v + " = " + e.getV() );
+        }
+        @Override
+        String getV(){
+            return v;
+        }
+    }
 
 
 }
