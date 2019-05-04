@@ -244,7 +244,6 @@ public class AST {
             type = "IntConst";
             value = vv;
             this.v = Integer.toString(value);
-            System.out.println(">>> " +v);
         }
         String getString(String space){
 
@@ -301,7 +300,7 @@ public class AST {
         void gen(){
             e1.gen();
             e2.gen();
-            String command = v + " = " + e1.getV() + " " + op + " " + e2.getV();
+            String command = v + " = " + e1.getV() + " " + op + (op.equals("=") ? op : "") + " " + e2.getV();
 
             prog3AdCode.add(command);
         }
@@ -320,7 +319,6 @@ public class AST {
             e = ee;
             op = opp;
             v = "t" + tCounter++;
-
         }
 
         String getString(String space) {
@@ -459,6 +457,7 @@ public class AST {
             return v;
         }
     }
+
     public static class Assign extends Expression {
         public String v;
         Expression e;
@@ -468,21 +467,88 @@ public class AST {
             this.v = v;
             this.e = e;
         }
+
         String getString(String space){
 
             return space + "Expression: type:" + type + " value = " + v;
         }
 
-
         void gen(){
             e.gen();
             prog3AdCode.add(v + " = " + e.getV() );
         }
+
         @Override
         String getV(){
             return v;
         }
     }
 
+    public static class Str extends Expression {
+        public String v;
 
+        public Str(String st){
+            type = "String";
+            v = st;
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type + " value = " + v;
+        }
+
+        void gen(){
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+    public static class Bool extends Expression {
+        public String v;
+
+        public Bool(String bo){
+            type = "BOOL_CONST";
+            v = bo;
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type + " value = " + v;
+        }
+
+        void gen(){
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+    public static class IsVo extends Expression {
+        Expression e;
+        public String v;
+
+        public IsVo(Expression ee){
+            e = ee;
+            type = "IsVoid";
+            v = "t" + tCounter++;
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type;
+        }
+
+        void gen(){
+            e.gen();
+            String command = v + " = " + e.getV() + " == NULL";
+            prog3AdCode.add(command);
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
 }

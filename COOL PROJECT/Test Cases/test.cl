@@ -1,9 +1,6 @@
 class Main{
    main():Object{
-
-        x<-2+3+5+1
-
-
+        while isvoid(x) loop 5+2 pool
    };
 };
 

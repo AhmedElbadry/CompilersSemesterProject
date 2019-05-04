@@ -1,4 +1,4 @@
-// Generated from C:/Users/WanTEd/Desktop/CompilersSemesterProject-master/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -157,6 +157,42 @@ public class ParseBaseListener implements ParseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMinus(Parse.MinusContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTrueOrFlase(Parse.TrueOrFlaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTrueOrFlase(Parse.TrueOrFlaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterString(Parse.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitString(Parse.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIsvoid(Parse.IsvoidContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIsvoid(Parse.IsvoidContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

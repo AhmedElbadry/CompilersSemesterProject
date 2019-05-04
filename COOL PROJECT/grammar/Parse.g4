@@ -118,18 +118,24 @@ expression returns [AST.Expression value]
         $value = new AST.While($e1.value, $e2.value);
     }
     # while
+
     /*| LBRACE (expression SEMICOLON) + RBRACE # block
     | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
     | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
     | NEW TYPEID # new
-    | MINUS expression # negative
-    | ISVOID expression # isvoid*/
+    | MINUS expression # negative*/
+    | ISVOID e=expression
+    {
+        $value = new AST.IsVo($e.value);
+    }
+    # isvoid
 
     | e1=expression op=MULTIPLY e2=expression
     {
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
     }
     # multiply
+
     | e1=expression op=DIVISION e2=expression
     {
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
@@ -188,10 +194,19 @@ expression returns [AST.Expression value]
     }
 
     # int
-    /*
-    | STRING # string
-    | BOOL_CONST # TrueOrFlase
-    */
+
+    | st=STRING
+    {
+        $value = new AST.Str($st.getText());
+    }
+    # string
+
+    | bo=BOOL_CONST
+    {
+        $value = new AST.Bool($bo.getText().toUpperCase());
+    }
+    # TrueOrFlase
+
     | i=OBJECTID ASSIGNMENT e=expression
     {
         $value = new AST.Assign($i.getText(), $e.value);

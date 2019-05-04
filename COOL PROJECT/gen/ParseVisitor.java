@@ -1,4 +1,4 @@
-// Generated from C:/Users/WanTEd/Desktop/CompilersSemesterProject-master/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -88,6 +88,27 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMinus(Parse.MinusContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code TrueOrFlase}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTrueOrFlase(Parse.TrueOrFlaseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code string}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString(Parse.StringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code isvoid}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIsvoid(Parse.IsvoidContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code assignment}
 	 * labeled alternative in {@link Parse#expression}.

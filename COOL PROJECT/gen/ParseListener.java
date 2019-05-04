@@ -1,4 +1,4 @@
-// Generated from C:/Users/WanTEd/Desktop/CompilersSemesterProject-master/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -137,6 +137,42 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMinus(Parse.MinusContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code TrueOrFlase}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterTrueOrFlase(Parse.TrueOrFlaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code TrueOrFlase}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitTrueOrFlase(Parse.TrueOrFlaseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code string}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(Parse.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code string}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(Parse.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code isvoid}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterIsvoid(Parse.IsvoidContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code isvoid}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitIsvoid(Parse.IsvoidContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code assignment}
 	 * labeled alternative in {@link Parse#expression}.
