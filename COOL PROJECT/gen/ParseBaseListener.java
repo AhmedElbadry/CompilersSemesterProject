@@ -1,4 +1,4 @@
-// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -277,6 +277,18 @@ public class ParseBaseListener implements ParseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLessThan(Parse.LessThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBlock(Parse.BlockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBlock(Parse.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

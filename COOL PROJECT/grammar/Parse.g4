@@ -119,8 +119,14 @@ expression returns [AST.Expression value]
     }
     # while
 
-    /*| LBRACE (expression SEMICOLON) + RBRACE # block
-    | LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
+    | LBRACE
+    {ArrayList<AST.Expression> a = new ArrayList<AST.Expression>();}
+    (e=expression SEMICOLON {a.add($e.value);}) + RBRACE
+    {
+        $value = new AST.BlockOfExpr(a);
+    }
+    # block
+    /*| LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
     | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
     | NEW TYPEID # new
     | MINUS expression # negative*/

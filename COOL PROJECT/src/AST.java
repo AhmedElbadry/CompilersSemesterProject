@@ -88,17 +88,15 @@ public class AST {
         }
         String getString(String space){
             String str;
-            str = space+"#"+lineNo+" method:" + name + " return type:" + retType + "\n" + sp+space;
+            str = space+"#"+lineNo+" method:" + name + " return type:" + retType + "\n";
             if(formals.size() > 0)
-                str += "formals: " + formals.size();
+                str += space + sp + "formals: " + formals.size() + "\n";
             else
-                str+= "no formals";
+                str+= space + sp + "no formals" + "\n";
             for ( formal f : formals ) {
-                str += "\n"+f.getString(space+sp);
+                str += f.getString(space+sp) + "\n";
             }
-            str += "\n" + e.getString(space+sp);
-
-            str += e.getString(space+sp);
+            str +=  e.getString(space+sp) + "\n";
             return str;
         }
         void gen(){
@@ -116,7 +114,7 @@ public class AST {
         }
         String getString(String space){
 
-            return space+ "#" + lineNo + " decl:" + name + " type:" + type ;
+            return space+ "#" + lineNo + " decl:" + name + " type:" + type + "\n";
         }
         void gen(){
 
@@ -133,7 +131,7 @@ public class AST {
         }
         String getString(String space){
 
-            return space + "formal:" + name + " type:" + type;
+            return space + "formal:" + name + " type:" + type + "\n";
         }
         void gen(){
 
@@ -148,7 +146,7 @@ public class AST {
         }
         String getString(String space){
 
-            return space + "Expression: type:" + type;
+            return space + "Expression: type:" + type + "\n";
         }
 
         int eval(){
@@ -159,9 +157,35 @@ public class AST {
         }
 
 
-
-
     }
+    public static class BlockOfExpr extends Expression {
+        ArrayList<AST.Expression> exprs;
+        public BlockOfExpr(ArrayList<AST.Expression> exprs){
+            type = "BlockOfExpr";
+            this.exprs = exprs;
+        }
+        String getString(String space){
+
+            String str = space + "Expression: type:" + type + "\n";
+
+            for(Expression e: exprs){
+                str += e.getString(space+sp);
+            }
+
+            return str;
+
+        }
+
+
+
+        void gen(){
+            for(Expression e: exprs){
+                e.gen();
+            }
+            //prog3AdCode.add( Integer.toString(value));
+        }
+    }
+
 
     public static class ArithOp extends Expression {
         Expression e1;
@@ -201,10 +225,10 @@ public class AST {
 
         String getString(String space) {
 
-            return "\n" + space + "Expression: type:" + type + "\n"
+            return space + "Expression: type:" + type + "\n"
                     + space + e1.getString(space + sp) + "\n"
                     + space + e2.getString(space + sp) + "\n"
-                    + space + "result = " + res;
+                    + space + "result = " + res + "\n";
         }
 
         int eval() {
@@ -247,7 +271,7 @@ public class AST {
         }
         String getString(String space){
 
-            return space + "Expression: type:" + type + " value = " + value;
+            return space + "Expression: type:" + type + " value = " + value + "\n";
         }
         int eval(){
             return value;
@@ -292,9 +316,9 @@ public class AST {
 
         String getString(String space) {
 
-            return "\n" + space + "Expression: type:" + type + "\n"
+            return space + "Expression: type:" + type + "\n"
                     + space + e1.getString(space + sp) + "\n"
-                    + space + e2.getString(space + sp);
+                    + space + e2.getString(space + sp)+ "\n";
         }
 
         void gen(){
@@ -323,8 +347,8 @@ public class AST {
 
         String getString(String space) {
 
-            return "\n" + space + "Expression: type: NOT" + "\n"
-                    + space + e.getString(space + sp);
+            return space + "Expression: type: NOT" + "\n"
+                    + space + e.getString(space + sp) + "\n";
         }
 
         void gen(){
@@ -349,8 +373,8 @@ public class AST {
 
         String getString(String space) {
 
-            return "\n" + space + "Expression: type: Parentheses" + "\n"
-                    + space + e.getString(space + sp);
+            return space + "Expression: type: Parentheses" + "\n"
+                    + space + e.getString(space + sp) + "\n";
         }
 
         void gen(){
@@ -382,7 +406,7 @@ public class AST {
 
         String getString(String space){
 
-            return space + "Expression: type:" + type;
+            return space + "Expression: type:" + type + "\n";
         }
 
 
@@ -418,7 +442,7 @@ public class AST {
         }
 
         String getString(String space){
-            return space + "Expression: type:" + type;
+            return space + "Expression: type:" + type + "\n";
         }
 
         void gen(){
@@ -445,7 +469,7 @@ public class AST {
         }
         String getString(String space){
 
-            return space + "Expression: type:" + type + " value = " + v;
+            return space + "Expression: type:" + type + " value = " + v + "\n";
         }
 
 
@@ -470,7 +494,7 @@ public class AST {
 
         String getString(String space){
 
-            return space + "Expression: type:" + type + " value = " + v;
+            return space + "Expression: type:" + type + " value = " + v + "\n";
         }
 
         void gen(){
@@ -493,7 +517,7 @@ public class AST {
         }
 
         String getString(String space){
-            return space + "Expression: type:" + type + " value = " + v;
+            return space + "Expression: type:" + type + " value = " + v + "\n";
         }
 
         void gen(){
@@ -514,7 +538,7 @@ public class AST {
         }
 
         String getString(String space){
-            return space + "Expression: type:" + type + " value = " + v;
+            return space + "Expression: type:" + type + " value = " + v + "\n";
         }
 
         void gen(){
@@ -537,7 +561,7 @@ public class AST {
         }
 
         String getString(String space){
-            return space + "Expression: type:" + type;
+            return space + "Expression: type:" + type + "\n";
         }
 
         void gen(){
