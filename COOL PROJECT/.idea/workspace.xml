@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a1033fb-c10a-47aa-b226-c55fb6cc94a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test Cases/test.cl" beforeDir="false" afterPath="$PROJECT_DIR$/Test Cases/test.cl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$ASTNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$ASTNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$ArithOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$ArithOp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$Assign.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$BlockOfExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$BlockOfExpr.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$Bool.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$Bool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$Expression.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$If.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$If.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$IntConst.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$IntConst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$IsVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$IsVo.class" afterDir="false" />
@@ -19,36 +16,32 @@
       <change beforePath="$PROJECT_DIR$/classes/AST$RelOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$RelOp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$Str.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$Str.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST$While.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$While.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$class_.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$class_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$decl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$decl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$feature.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$feature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$formal.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$formal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$method.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$method.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AST$program.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST$program.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/AST.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$AddContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$AddContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$AssignmentContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$AssignmentContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$BlockContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$BoolNotContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$BoolNotContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DeclContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$DivisionContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$EqualContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$EqualContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$FormalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FormalContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parse$FormalListContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$FormalListContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IdContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IdContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IfContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IfContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IntContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IntContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$IsvoidContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$IsvoidContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$LessEqualContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LessEqualContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$LessThanContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LessThanContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$LetInContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$LetInContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MinusContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MinusContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$MultiplyContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$NegativeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$NegativeContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Parse$NewContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$NewContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$ParenthesesContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$ParenthesesContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$StringContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$StringContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$TrueOrFlaseContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$TrueOrFlaseContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse$WhileContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse$WhileContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parse.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ParseBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseBaseVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ParseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ParseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ParseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Parse.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Parse.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Parse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/ParseBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/ParseBaseListener.java" afterDir="false" />
@@ -90,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="77" column="4" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+            <state relative-caret-position="133">
+              <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
               <folding>
                 <element signature="e#23#53#1" />
                 <element signature="e#89#235#1" />
@@ -100,6 +93,7 @@
                 <element signature="e#930#1107#1" />
                 <element signature="e#1107#1255#1" />
                 <element signature="e#1255#1745#1" />
+                <element signature="e#1746#2106#1" />
                 <element signature="e#2078#2282#1" />
                 <element signature="e#2282#2465#1" />
               </folding>
@@ -110,80 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="38" column="6" selection-start-line="38" selection-end-line="38" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/Parse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816">
-              <folding>
-                <element signature="e#21453#21454#0" expanded="true" />
-                <element signature="e#21505#21506#0" expanded="true" />
-                <element signature="e#21544#21545#0" expanded="true" />
-                <element signature="e#21597#21598#0" expanded="true" />
-                <element signature="e#21705#21706#0" expanded="true" />
-                <element signature="e#21745#21746#0" expanded="true" />
-                <element signature="e#21819#21820#0" expanded="true" />
-                <element signature="e#21856#21857#0" expanded="true" />
-                <element signature="e#23919#23920#0" expanded="true" />
-                <element signature="e#23956#23957#0" expanded="true" />
-                <element signature="e#25484#25485#0" expanded="true" />
-                <element signature="e#25521#25522#0" expanded="true" />
-                <element signature="e#25918#25919#0" expanded="true" />
-                <element signature="e#25974#25975#0" expanded="true" />
-                <element signature="e#26021#26022#0" expanded="true" />
-                <element signature="e#26078#26079#0" expanded="true" />
-                <element signature="e#27019#27020#0" expanded="true" />
-                <element signature="e#27076#27077#0" expanded="true" />
-                <element signature="e#27899#27900#0" expanded="true" />
-                <element signature="e#27955#27956#0" expanded="true" />
-                <element signature="e#28002#28003#0" expanded="true" />
-                <element signature="e#28059#28060#0" expanded="true" />
-                <element signature="e#30497#30498#0" expanded="true" />
-                <element signature="e#30554#30555#0" expanded="true" />
-                <element signature="e#31473#31474#0" expanded="true" />
-                <element signature="e#31530#31531#0" expanded="true" />
-                <element signature="e#32527#32528#0" expanded="true" />
-                <element signature="e#32583#32584#0" expanded="true" />
-                <element signature="e#32630#32631#0" expanded="true" />
-                <element signature="e#32687#32688#0" expanded="true" />
-                <element signature="e#34230#34231#0" expanded="true" />
-                <element signature="e#34286#34287#0" expanded="true" />
-                <element signature="e#34333#34334#0" expanded="true" />
-                <element signature="e#34390#34391#0" expanded="true" />
-                <element signature="e#35274#35275#0" expanded="true" />
-                <element signature="e#35330#35331#0" expanded="true" />
-                <element signature="e#35377#35378#0" expanded="true" />
-                <element signature="e#35434#35435#0" expanded="true" />
-                <element signature="e#36327#36328#0" expanded="true" />
-                <element signature="e#36384#36385#0" expanded="true" />
-                <element signature="e#37194#37195#0" expanded="true" />
-                <element signature="e#37250#37251#0" expanded="true" />
-                <element signature="e#37297#37298#0" expanded="true" />
-                <element signature="e#37354#37355#0" expanded="true" />
-                <element signature="e#38399#38400#0" expanded="true" />
-                <element signature="e#38443#38444#0" expanded="true" />
-                <element signature="e#38491#38492#0" expanded="true" />
-                <element signature="e#38547#38548#0" expanded="true" />
-                <element signature="e#38594#38595#0" expanded="true" />
-                <element signature="e#38651#38652#0" expanded="true" />
-                <element signature="e#40200#40201#0" expanded="true" />
-                <element signature="e#40256#40257#0" expanded="true" />
-                <element signature="e#40303#40304#0" expanded="true" />
-                <element signature="e#40360#40361#0" expanded="true" />
-                <element signature="e#41255#41256#0" expanded="true" />
-                <element signature="e#41311#41312#0" expanded="true" />
-                <element signature="e#41358#41359#0" expanded="true" />
-                <element signature="e#41415#41416#0" expanded="true" />
-                <element signature="e#42560#42561#0" expanded="true" />
-                <element signature="e#42616#42617#0" expanded="true" />
-                <element signature="e#42663#42664#0" expanded="true" />
-                <element signature="e#42720#42721#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-416">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -191,20 +113,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+            <state relative-caret-position="193">
+              <caret line="217" column="21" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#ASTNode#0;class#AST#0" />
-                <element signature="e#227#235#0" expanded="true" />
+                <element signature="class#program#0;class#AST#0" />
                 <element signature="class#class_#0;class#AST#0" />
                 <element signature="class#feature#0;class#AST#0" />
                 <element signature="class#method#0;class#AST#0" />
+                <element signature="class#decl#0;class#AST#0" />
                 <element signature="e#3571#3572#0" expanded="true" />
                 <element signature="e#3606#3607#0" expanded="true" />
                 <element signature="class#formal#0;class#AST#0" />
                 <element signature="class#Expression#0;class#AST#0" />
-                <element signature="class#BlockOfExpr#0;class#AST#0" />
+                <element signature="e#5440#5441#0" expanded="true" />
+                <element signature="e#5472#5473#0" expanded="true" />
                 <element signature="class#ArithOp#0;class#AST#0" />
                 <element signature="class#IntConst#0;class#AST#0" />
                 <element signature="class#RelOp#0;class#AST#0" />
@@ -213,37 +137,16 @@
                 <element signature="class#If#0;class#AST#0" />
                 <element signature="class#While#0;class#AST#0" />
                 <element signature="class#ObId#0;class#AST#0" />
+                <element signature="class#Assign#0;class#AST#0" />
                 <element signature="class#Str#0;class#AST#0" />
                 <element signature="class#Bool#0;class#AST#0" />
+                <element signature="class#NewType#0;class#AST#0" />
+                <element signature="e#14170#14171#0" expanded="true" />
+                <element signature="e#14210#14211#0" expanded="true" />
                 <element signature="class#IsVo#0;class#AST#0" />
+                <element signature="e#15550#15551#0" expanded="true" />
+                <element signature="e#15582#15583#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test Cases/good1.cl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TestCodegen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Parserlistener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -251,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="51">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -268,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>IN</find>
       <find>OF</find>
       <find>CASE_ARROW</find>
       <find>CASE</find>
@@ -298,6 +200,7 @@
       <find>BlockOfExpr</find>
       <find>decl</find>
       <find>)?</find>
+      <find>LogOp</find>
     </findStrings>
     <replaceStrings>
       <replace>CoolLexer</replace>
@@ -347,17 +250,17 @@
         <option value="$PROJECT_DIR$/src/TestParser.java" />
         <option value="$PROJECT_DIR$/gen/ParseBaseListener.java" />
         <option value="$PROJECT_DIR$/src/TestCodegen.java" />
-        <option value="$PROJECT_DIR$/src/AST.java" />
-        <option value="$PROJECT_DIR$/Test Cases/test.cl" />
         <option value="$PROJECT_DIR$/grammar/Parse.g4" />
+        <option value="$PROJECT_DIR$/Test Cases/test.cl" />
+        <option value="$PROJECT_DIR$/src/AST.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="152" />
-    <option name="y" value="340" />
-    <option name="width" value="684" />
-    <option name="height" value="729" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -659,16 +562,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="38" column="6" selection-start-line="38" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen/Parse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
+        <state relative-caret-position="-1173">
           <folding>
             <element signature="e#21453#21454#0" expanded="true" />
             <element signature="e#21505#21506#0" expanded="true" />
@@ -708,50 +604,68 @@
             <element signature="e#35330#35331#0" expanded="true" />
             <element signature="e#35377#35378#0" expanded="true" />
             <element signature="e#35434#35435#0" expanded="true" />
-            <element signature="e#36327#36328#0" expanded="true" />
-            <element signature="e#36384#36385#0" expanded="true" />
-            <element signature="e#37194#37195#0" expanded="true" />
-            <element signature="e#37250#37251#0" expanded="true" />
-            <element signature="e#37297#37298#0" expanded="true" />
-            <element signature="e#37354#37355#0" expanded="true" />
-            <element signature="e#38399#38400#0" expanded="true" />
-            <element signature="e#38443#38444#0" expanded="true" />
-            <element signature="e#38491#38492#0" expanded="true" />
-            <element signature="e#38547#38548#0" expanded="true" />
-            <element signature="e#38594#38595#0" expanded="true" />
-            <element signature="e#38651#38652#0" expanded="true" />
-            <element signature="e#40200#40201#0" expanded="true" />
-            <element signature="e#40256#40257#0" expanded="true" />
-            <element signature="e#40303#40304#0" expanded="true" />
-            <element signature="e#40360#40361#0" expanded="true" />
-            <element signature="e#41255#41256#0" expanded="true" />
-            <element signature="e#41311#41312#0" expanded="true" />
-            <element signature="e#41358#41359#0" expanded="true" />
-            <element signature="e#41415#41416#0" expanded="true" />
-            <element signature="e#42560#42561#0" expanded="true" />
-            <element signature="e#42616#42617#0" expanded="true" />
-            <element signature="e#42663#42664#0" expanded="true" />
-            <element signature="e#42720#42721#0" expanded="true" />
+            <element signature="e#36452#36453#0" expanded="true" />
+            <element signature="e#36509#36510#0" expanded="true" />
+            <element signature="e#37347#37348#0" expanded="true" />
+            <element signature="e#37404#37405#0" expanded="true" />
+            <element signature="e#38214#38215#0" expanded="true" />
+            <element signature="e#38270#38271#0" expanded="true" />
+            <element signature="e#38317#38318#0" expanded="true" />
+            <element signature="e#38374#38375#0" expanded="true" />
+            <element signature="e#39419#39420#0" expanded="true" />
+            <element signature="e#39463#39464#0" expanded="true" />
+            <element signature="e#39511#39512#0" expanded="true" />
+            <element signature="e#39567#39568#0" expanded="true" />
+            <element signature="e#39614#39615#0" expanded="true" />
+            <element signature="e#39671#39672#0" expanded="true" />
+            <element signature="e#41220#41221#0" expanded="true" />
+            <element signature="e#41276#41277#0" expanded="true" />
+            <element signature="e#41323#41324#0" expanded="true" />
+            <element signature="e#41380#41381#0" expanded="true" />
+            <element signature="e#42275#42276#0" expanded="true" />
+            <element signature="e#42331#42332#0" expanded="true" />
+            <element signature="e#42378#42379#0" expanded="true" />
+            <element signature="e#42435#42436#0" expanded="true" />
+            <element signature="e#43580#43581#0" expanded="true" />
+            <element signature="e#43636#43637#0" expanded="true" />
+            <element signature="e#43683#43684#0" expanded="true" />
+            <element signature="e#43740#43741#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/Lex.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+        <state relative-caret-position="193">
+          <caret line="217" column="21" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ASTNode#0;class#AST#0" />
-            <element signature="e#227#235#0" expanded="true" />
+            <element signature="class#program#0;class#AST#0" />
             <element signature="class#class_#0;class#AST#0" />
             <element signature="class#feature#0;class#AST#0" />
             <element signature="class#method#0;class#AST#0" />
+            <element signature="class#decl#0;class#AST#0" />
             <element signature="e#3571#3572#0" expanded="true" />
             <element signature="e#3606#3607#0" expanded="true" />
             <element signature="class#formal#0;class#AST#0" />
             <element signature="class#Expression#0;class#AST#0" />
-            <element signature="class#BlockOfExpr#0;class#AST#0" />
+            <element signature="e#5440#5441#0" expanded="true" />
+            <element signature="e#5472#5473#0" expanded="true" />
             <element signature="class#ArithOp#0;class#AST#0" />
             <element signature="class#IntConst#0;class#AST#0" />
             <element signature="class#RelOp#0;class#AST#0" />
@@ -760,24 +674,23 @@
             <element signature="class#If#0;class#AST#0" />
             <element signature="class#While#0;class#AST#0" />
             <element signature="class#ObId#0;class#AST#0" />
+            <element signature="class#Assign#0;class#AST#0" />
             <element signature="class#Str#0;class#AST#0" />
             <element signature="class#Bool#0;class#AST#0" />
+            <element signature="class#NewType#0;class#AST#0" />
+            <element signature="e#14170#14171#0" expanded="true" />
+            <element signature="e#14210#14211#0" expanded="true" />
             <element signature="class#IsVo#0;class#AST#0" />
+            <element signature="e#15550#15551#0" expanded="true" />
+            <element signature="e#15582#15583#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test Cases/test.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grammar/Parse.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="77" column="4" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+        <state relative-caret-position="133">
+          <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
           <folding>
             <element signature="e#23#53#1" />
             <element signature="e#89#235#1" />
@@ -786,6 +699,7 @@
             <element signature="e#930#1107#1" />
             <element signature="e#1107#1255#1" />
             <element signature="e#1255#1745#1" />
+            <element signature="e#1746#2106#1" />
             <element signature="e#2078#2282#1" />
             <element signature="e#2282#2465#1" />
           </folding>

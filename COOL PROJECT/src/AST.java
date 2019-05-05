@@ -10,7 +10,7 @@ public class AST {
         }
     }
 
-    public static ArrayList<String> prog3AdCode = new ArrayList<String>();
+    public static ArrayList<String> prog3AdCode = new ArrayList<>();
     public static int tCounter = 1;
     public static int lCounter = 1;
     public static String sp = "  ";
@@ -183,10 +183,14 @@ public class AST {
 
     public static class BlockOfExpr extends Expression {
         ArrayList<AST.Expression> exprs;
-        public BlockOfExpr(ArrayList<AST.Expression> exprs){
+        String v;
+
+        public BlockOfExpr(ArrayList<Expression> exprs){
             type = "BlockOfExpr";
             this.exprs = exprs;
+            v = "t" + tCounter++;
         }
+
         String getString(String space){
 
             String str = space + "Expression: type:" + type + "\n";
@@ -199,10 +203,19 @@ public class AST {
         }
 
         void gen(){
+            Expression last = new Expression();
+
             for(Expression e: exprs){
                 e.gen();
+                last = e;
             }
-            //prog3AdCode.add( Integer.toString(value));
+
+            prog3AdCode.add(v + " = " + last.getV());
+        }
+
+        @Override
+        String getV(){
+            return v;
         }
     }
 
@@ -361,18 +374,19 @@ public class AST {
         public LogOp(Expression ee, String opp) {
             e = ee;
             op = opp;
+            if(op.equals("NOT"))    op = "!";
             v = "t" + tCounter++;
         }
 
         String getString(String space) {
 
-            return space + "Expression: type: NOT" + "\n"
+            return space + "Expression: type: "+ op + "\n"
                     + space + e.getString(space + sp) + "\n";
         }
 
         void gen(){
             e.gen();
-            String command = v + " = !" + e.getV();
+            String command = v + " = " + op + " " + e.getV();
             prog3AdCode.add(command);
         }
         @Override
@@ -569,6 +583,25 @@ public class AST {
         }
     }
 
+    public static class NewType extends Expression {
+        String type;
+        public NewType(String type){
+            this.type = type;
+        }
+
+        String getString(String space){
+            return space + "Expression: type: NEW " + type + "\n";
+        }
+
+        void gen(){
+        }
+
+        @Override
+        String getV(){
+            return "NULL";
+        }
+    }
+
     public static class IsVo extends Expression {
         Expression e;
         public String v;
@@ -587,6 +620,47 @@ public class AST {
             e.gen();
             String command = v + " = " + e.getV() + " == NULL";
             prog3AdCode.add(command);
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+    public static class Let extends Expression {
+        Expression e;
+        ArrayList<Expression> exprs;
+        ArrayList<String> ids;
+        ArrayList<Boolean> flags;
+        String type;
+        public String v;
+
+        public Let(ArrayList<Boolean> flags, ArrayList<String> ids, ArrayList<Expression> exprs, Expression e){
+            this.exprs = exprs;
+            this.flags = flags;
+            this.ids = ids;
+            this.e = e;
+            type = "LET";
+            v = "t" + tCounter++;
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type + "\n";
+        }
+
+        void gen(){
+            int po = 0;
+            for (AST.Expression it : exprs){
+                if(flags.get(po)){
+                    it.gen();
+                    prog3AdCode.add(ids.get(po) + " = " + it.getV());
+                }
+                po++;
+            }
+
+            e.gen();
+            prog3AdCode.add(v + " = " + e.getV());
         }
 
         @Override

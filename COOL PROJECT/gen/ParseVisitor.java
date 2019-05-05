@@ -75,6 +75,20 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAdd(Parse.AddContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code letIn}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLetIn(Parse.LetInContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code new}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNew(Parse.NewContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code parentheses}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -144,6 +158,13 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEqual(Parse.EqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code negative}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNegative(Parse.NegativeContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code boolNot}
 	 * labeled alternative in {@link Parse#expression}.

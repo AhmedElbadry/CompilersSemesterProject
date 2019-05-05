@@ -126,10 +126,36 @@ expression returns [AST.Expression value]
         $value = new AST.BlockOfExpr(a);
     }
     # block
-    /*| LET OBJECTID COLON TYPEID (ASSIGNMENT expression)? (COMMA OBJECTID COLON TYPEID (ASSIGNMENT expression)?)* IN expression # letIn
-    | CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case
-    | NEW TYPEID # new
-    | MINUS expression # negative*/
+
+    |
+    {
+        ArrayList<AST.Expression> exprs = new ArrayList<>();
+        ArrayList<String> ids = new ArrayList<>();
+        ArrayList<Boolean> flags = new ArrayList<>();
+        Boolean flag;
+        AST.Expression expr;
+    }
+    LET i1=OBJECTID {flag = false; expr = new AST.Expression(); ids.add($i1.getText());} COLON TYPEID
+    (ASSIGNMENT e1=expression {flag = true; expr = $e1.value;})? {flags.add(flag); exprs.add(expr);}
+    (COMMA i=OBJECTID {flag = false; expr = new AST.Expression(); ids.add($i.getText());} COLON TYPEID
+    (ASSIGNMENT e=expression {flag = true; expr = $e.value;})? {flags.add(flag); exprs.add(expr);})* IN e2=expression
+    {
+        $value = new AST.Let(flags, ids, exprs, $e2.value);
+    }
+    # letIn
+
+    /*| CASE expression OF (OBJECTID COLON TYPEID CASE_ARROW expression SEMICOLON) + ESAC # case*/
+    | NEW i=TYPEID
+    {
+        $value = new AST.NewType($i.getText());
+    }
+    # new
+    | op=MINUS e=expression
+    {
+        $value = new AST.LogOp($e.value, $op.getText());
+    }
+    # negative
+
     | ISVOID e=expression
     {
         $value = new AST.IsVo($e.value);
@@ -147,11 +173,13 @@ expression returns [AST.Expression value]
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
     }
     # division
+
     | e1=expression op=ADD e2=expression
     {
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
     }
     # add
+
     | e1=expression op=MINUS e2=expression
     {
         $value = new AST.ArithOp($e1.value, $e2.value, $op.getText());
@@ -218,5 +246,4 @@ expression returns [AST.Expression value]
         $value = new AST.Assign($i.getText(), $e.value);
     }
     # assignment
-
     ;

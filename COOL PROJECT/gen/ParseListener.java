@@ -114,6 +114,30 @@ public interface ParseListener extends ParseTreeListener {
 	 */
 	void exitAdd(Parse.AddContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code letIn}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLetIn(Parse.LetInContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code letIn}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLetIn(Parse.LetInContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code new}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNew(Parse.NewContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code new}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNew(Parse.NewContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code parentheses}
 	 * labeled alternative in {@link Parse#expression}.
 	 * @param ctx the parse tree
@@ -233,6 +257,18 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEqual(Parse.EqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code negative}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNegative(Parse.NegativeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code negative}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNegative(Parse.NegativeContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code boolNot}
 	 * labeled alternative in {@link Parse#expression}.
