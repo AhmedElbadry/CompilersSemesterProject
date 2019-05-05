@@ -45,6 +45,7 @@ featureList returns [ArrayList<AST.feature> value]
     : (f=feature SEMICOLON {$value.add($f.value);})*
 
     ;
+
 feature returns [AST.feature value]
     : m=method
     {
@@ -71,15 +72,13 @@ method returns [AST.method value]
     ;
 
 decl returns [AST.decl value]
-    /*x: Int*/
-    : n=OBJECTID COLON t=TYPEID
+    //x: Int
+    //x: Int <- expr
+    :{Boolean flag = false;}
+    n=OBJECTID COLON t=TYPEID (ASSIGNMENT e=expression{flag = true;})?
     {
-        $value = new AST.decl($n.getText(), $t.getText(), $n.getLine());
-    }
-    /*x: Int = expr*/
-    | n=OBJECTID COLON t=TYPEID (ASSIGNMENT expression)?
-    {
-        $value = new AST.decl($n.getText(), $t.getText(), $n.getLine());
+        if(flag)    $value = new AST.decl($n.getText(), $t.getText(), $n.getLine(), $e.value);
+        else    $value = new AST.decl($n.getText(), $t.getText(), $n.getLine());
     }
     ;
 
@@ -91,6 +90,7 @@ formalList returns [ArrayList<AST.formal> value]
     : f=formal {$value.add($f.value);} (COMMA fi=formal {$value.add($fi.value);})*
 
     ;
+
 formal returns [AST.formal value]
     /*x: Int*/
     : n=OBJECTID COLON t=TYPEID

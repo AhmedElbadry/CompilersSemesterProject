@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public class AST {
     public static class ASTNode {
         int lineNo;
@@ -34,6 +35,7 @@ public class AST {
             }
         }
     }
+
     public static class class_ extends ASTNode {
         public String name;
         public String parent;
@@ -103,21 +105,43 @@ public class AST {
             e.gen();
         }
     }
+
     public static class decl extends feature {
         String name;
         String type;
+        Boolean flag = false;
+        Expression e;
+
         public decl(String n, String t, int l){
             name = n;
             type = t;
             lineNo = l;
-            //System.out.println("claaaas");
+            System.out.println("111111" + flag);
         }
+
+        public decl(String n, String t, int l, Expression e){
+            name = n;
+            type = t;
+            lineNo = l;
+            this.e = e;
+            flag = true;
+            System.out.println("222222" + flag);
+        }
+
         String getString(String space){
 
             return space+ "#" + lineNo + " decl:" + name + " type:" + type + "\n";
         }
-        void gen(){
 
+        void gen(){
+            if(flag){
+                e.gen();
+                prog3AdCode.add(name + " = " + e.getV());
+            }
+        }
+
+        String getV(){
+            return name;
         }
     }
 
@@ -155,9 +179,8 @@ public class AST {
         String getV(){
             return v;
         }
-
-
     }
+
     public static class BlockOfExpr extends Expression {
         ArrayList<AST.Expression> exprs;
         public BlockOfExpr(ArrayList<AST.Expression> exprs){
@@ -173,10 +196,7 @@ public class AST {
             }
 
             return str;
-
         }
-
-
 
         void gen(){
             for(Expression e: exprs){
@@ -185,7 +205,6 @@ public class AST {
             //prog3AdCode.add( Integer.toString(value));
         }
     }
-
 
     public static class ArithOp extends Expression {
         Expression e1;
