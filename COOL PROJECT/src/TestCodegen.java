@@ -41,8 +41,8 @@ public class TestCodegen {
             parser.addErrorListener(new ThrowingErrorListener());
 
 
-            Parse.ProgramContext prog = null;
-            prog = parser.program();
+            Parse.ProgramContext prog = parser.program();
+            //prog = parser.program();
 
             System.out.println(prog.value.getString(""));
             prog.value.gen();

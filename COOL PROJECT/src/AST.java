@@ -16,8 +16,8 @@ public class AST {
     public static String sp = "  ";
 
     public static class program extends ASTNode {
-        public List<class_> classes_;
-        public program(List<class_> c, int l){
+        public ArrayList<AST.class_> classes_;
+        public program(ArrayList<AST.class_> c, int l){
             classes_ = c;
             lineNo = l;
         }
@@ -30,7 +30,7 @@ public class AST {
             return str;
         }
         void gen(){
-            for ( class_ c : classes_ ) {
+            for ( AST.class_ c : classes_ ) {
                 c.gen();
             }
         }
