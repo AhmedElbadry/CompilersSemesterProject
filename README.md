@@ -75,7 +75,7 @@ There is a class for every rule/operator we want to generate three address code 
 We can use one class for similar operators, for example, an arithematic operator (+, -, *, /) generate similar code, so we can use one class for all arithmetic operators.
 
 
-This is our parser grammar, for simplicity, we removed all the expressions and only left the addition.
+This is our parser grammar, for simplicity, we removed all the expressions and only left the arithmetic operations.
 
 ```g4
 program : programBlocks EOF;
@@ -98,7 +98,7 @@ method returns [AST.method value]
     | OBJECTID LPAREN formalList RPAREN COLON TYPEID LBRACE expression RBRACE
     ;
 
-decl: OBJECTID COLON t=TYPEID (ASSIGNMENT expression)?;
+decl: OBJECTID COLON TYPEID (ASSIGNMENT expression)?;
 
 formalList:formal (COMMA formal)*;
 
@@ -111,10 +111,15 @@ expression
 ```
 
 Here is a simple description of the grammar:
+
 A program contains programBlocks
+
 programBlocks is one or more class
+
 each class has methods and/or declarations
+
 each method contains an expression
+
 each expression is an arithmetic operation or a number.
 
 
@@ -311,30 +316,10 @@ public class AST {
         public String v;
 
         public ArithOp(Expression ee1, Expression ee2, String opp) {
-
             e1 = ee1;
             e2 = ee2;
             op = opp;
-            res = this.eval();
             v = "t" + tCounter++;
-
-            switch (op) {
-                case "+":
-                    type = "Add";
-                    break;
-                case "-":
-                    type = "Sub";
-                    break;
-                case "*":
-                    type = "Mul";
-                    break;
-                case "/":
-                    type = "Div";
-                    break;
-                default:
-                    type = "un identified";
-                    break;
-            }
         }
 
         void gen(){
