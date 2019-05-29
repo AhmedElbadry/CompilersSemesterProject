@@ -1,4 +1,4 @@
-// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -353,4 +353,16 @@ public interface ParseListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIf(Parse.IfContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code methodCall}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodCall(Parse.MethodCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code methodCall}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodCall(Parse.MethodCallContext ctx);
 }

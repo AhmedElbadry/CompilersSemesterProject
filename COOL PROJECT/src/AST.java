@@ -56,9 +56,11 @@ public class AST {
             return str;
         }
         void gen(){
+            prog3AdCode.add("beginClass: " + name);
             for ( feature f : features ) {
                 f.gen();
             }
+            prog3AdCode.add("endClass: " + name);
         }
     }
 
@@ -102,7 +104,9 @@ public class AST {
             return str;
         }
         void gen(){
+            prog3AdCode.add("beginFunc: " + name);
             e.gen();
+            prog3AdCode.add("endFunc: " + name);
         }
     }
 
@@ -125,11 +129,9 @@ public class AST {
             lineNo = l;
             this.e = e;
             flag = true;
-            System.out.println("222222" + flag);
         }
 
         String getString(String space){
-
             return space+ "#" + lineNo + " decl:" + name + " type:" + type + "\n";
         }
 
@@ -660,7 +662,7 @@ public class AST {
             }
 
             e.gen();
-            prog3AdCode.add(v + " = " + e.getV());
+            //prog3AdCode.add(v + " = " + e.getV());
         }
 
         @Override
@@ -668,4 +670,38 @@ public class AST {
             return v;
         }
     }
+    public static class MethodCall extends Expression {
+        String name;
+        ArrayList<Expression> exprs;
+        String type;
+        public String v;
+
+        public MethodCall(String name, ArrayList<Expression> exprs){
+            this.name = name;
+            this.exprs = exprs;
+            this.type = "MethodCall";
+        }
+
+        String getString(String space){
+            return space + "Expression: type:" + type + "\n";
+        }
+
+        void gen(){
+            for(Expression e: exprs){
+                e.gen();
+                prog3AdCode.add("param " + e.getV());
+            }
+
+            prog3AdCode.add("call " + name + ", " + exprs.size());
+
+
+        }
+
+        @Override
+        String getV(){
+            return v;
+        }
+    }
+
+
 }

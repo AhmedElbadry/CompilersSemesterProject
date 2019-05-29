@@ -1,4 +1,4 @@
-// Generated from C:/Users/Khaled/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Ahmed/Desktop/CompilersSemesterProject/COOL PROJECT/grammar\Parse.g4 by ANTLR 4.7.2
 
 	import java.util.List;
 
@@ -214,4 +214,11 @@ public interface ParseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIf(Parse.IfContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code methodCall}
+	 * labeled alternative in {@link Parse#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodCall(Parse.MethodCallContext ctx);
 }
