@@ -49,7 +49,9 @@ public class TestCodegen {
             //System.out.println(AST.prog3AdCode);
             for(String s: AST.prog3AdCode){
                 System.out.println(s);
+                writer.append(s + "\n");
             }
+            writer.close();
 
 
 

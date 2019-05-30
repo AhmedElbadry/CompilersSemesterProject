@@ -103,15 +103,22 @@ formal returns [AST.formal value]
 expression returns [AST.Expression value]
 
     :
-    expression
+    e1=expression
     {ArrayList<AST.Expression> a = new ArrayList<AST.Expression>();}
     (ATSYM TYPEID)? DOT n=OBJECTID LPAREN
     (e=expression {a.add($e.value);} (COMMA ee=expression {a.add($ee.value);})*)? RPAREN
     {
-        $value = new AST.MethodCall($n.getText(), a);
+        $value = new AST.MethodCall($e1.value, $n.getText(), a);
     }
     # methodCall
-    /*| OBJECTID LPAREN (expression (COMMA expression)*)* RPAREN # ownMethodCall*/
+
+    | {ArrayList<AST.Expression> a = new ArrayList<AST.Expression>();}
+    n=OBJECTID LPAREN (e=expression {a.add($e.value);} (COMMA ee=expression {a.add($ee.value);})*)? RPAREN
+    {
+        $value = new AST.MethodCall($n.getText(), a);
+    }
+    # ownMethodCall
+
     | IF e1=expression THEN e2=expression ELSE e3=expression FI
     {
         $value = new AST.If($e1.value, $e2.value, $e3.value);

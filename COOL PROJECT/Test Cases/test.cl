@@ -1,5 +1,5 @@
 class Main{
    main():Object{
-     a.testFunc(5, 2, 6+9)
+     (3 + 7).testFunc(5, 2, 6+9)
    };
 };

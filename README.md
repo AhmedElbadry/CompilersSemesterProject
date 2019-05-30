@@ -23,7 +23,7 @@ To run the parser on an input file good1.cl
 
 To run the codegenerator on an input file good1.cl
 
-`java -cp "classes;dep/antlr-4.7.2-complete.jar" TestCodegen test.cl`
+`java -cp "classes;dep/antlr-4.7.2-complete.jar" TestCodegen good1.cl`
 
 ## Phase 1 The Lexer:
 In this phase, we created a lexical analyzer (scanner) using antlr as lexical analyzer generator.

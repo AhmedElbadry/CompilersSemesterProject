@@ -120,7 +120,7 @@ public class AST {
             name = n;
             type = t;
             lineNo = l;
-            System.out.println("111111" + flag);
+            //System.out.println("111111" + flag);
         }
 
         public decl(String n, String t, int l, Expression e){
@@ -235,7 +235,7 @@ public class AST {
             op = opp;
             res = this.eval();
             v = "t" + tCounter++;
-            System.out.println(">>> " +v);
+            //System.out.println(">>> " +v);
 
             switch (op) {
                 case "+":
@@ -662,7 +662,7 @@ public class AST {
             }
 
             e.gen();
-            //prog3AdCode.add(v + " = " + e.getV());
+            prog3AdCode.add(v + " = " + e.getV());
         }
 
         @Override
@@ -675,11 +675,19 @@ public class AST {
         ArrayList<Expression> exprs;
         String type;
         public String v;
+        Expression exp;
+
+        public MethodCall(Expression exp, String name, ArrayList<Expression> exprs){
+            this.exp = exp;
+            this.name = name;
+            this.exprs = exprs;
+            this.type = "MethodCall";
+        }
 
         public MethodCall(String name, ArrayList<Expression> exprs){
             this.name = name;
             this.exprs = exprs;
-            this.type = "MethodCall";
+            this.type = "OwnMethodCall";
         }
 
         String getString(String space){
@@ -687,14 +695,14 @@ public class AST {
         }
 
         void gen(){
+            if(type.equals("MethodCall"))   exp.gen();
+
             for(Expression e: exprs){
                 e.gen();
                 prog3AdCode.add("param " + e.getV());
             }
 
             prog3AdCode.add("call " + name + ", " + exprs.size());
-
-
         }
 
         @Override
