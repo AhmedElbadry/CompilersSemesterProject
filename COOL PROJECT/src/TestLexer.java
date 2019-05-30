@@ -12,7 +12,7 @@ public class TestLexer {
 
     public static void main(String[] args) throws Exception {
         String TestCaseFile = "Test Cases/" + args[0];
-        String OutputFile = "Output/" + args[0] + "-lex";
+        String OutputFile = "Output/" + args[0] + "-LEX";
 
         File file = new File(OutputFile);
         file.delete();

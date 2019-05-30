@@ -27,9 +27,7 @@ public class TestParser {
             String TestCaseFile = "Test Cases/" + args[0];
             String OutputFile = "Output/" + args[0] + "-CST";
 
-            File file = new File(OutputFile);
-            file.delete();
-            writer = new BufferedWriter(new FileWriter(OutputFile, true));
+            
 
             FileInputStream fis = new FileInputStream(new File(TestCaseFile));
             ANTLRInputStream input = new ANTLRInputStream(fis);
@@ -48,6 +46,9 @@ public class TestParser {
 
             ParseTree tree = parser.program();
             //System.out.println(tree.toStringTree(parser));
+            File file = new File(OutputFile);
+            file.delete();
+            writer = new BufferedWriter(new FileWriter(OutputFile, true));
             writer.append(tree.toStringTree(parser));
             writer.close();
 

@@ -14,6 +14,18 @@ public class AST {
     public static int tCounter = 1;
     public static int lCounter = 1;
     public static String sp = "  ";
+    public static int codeInd = 0;
+
+    public static String getCodeInd(){
+        String res = "";
+        for(int i = 0; i < codeInd; i++)
+            res += "   ";
+        return res;
+    }
+
+    public static void emit(String s){
+        prog3AdCode.add(getCodeInd()+s);
+    }
 
     public static class program extends ASTNode {
         public ArrayList<AST.class_> classes_;
@@ -56,11 +68,13 @@ public class AST {
             return str;
         }
         void gen(){
-            prog3AdCode.add("beginClass: " + name);
+            emit("beginClass: " + name);
+            codeInd++;
             for ( feature f : features ) {
                 f.gen();
             }
-            prog3AdCode.add("endClass: " + name);
+            codeInd--;
+            emit("endClass: " + name);
         }
     }
 
@@ -104,9 +118,17 @@ public class AST {
             return str;
         }
         void gen(){
-            prog3AdCode.add("beginFunc: " + name);
+            String params = ""; int i = 0;
+            for ( formal f : formals ) {
+                if(i!=0) params += ", ";
+                params += f.type + ": " + f.name;
+                i++;
+            }
+            emit("beginFunc: " + name + ": " + params);
+            codeInd++;
             e.gen();
-            prog3AdCode.add("endFunc: " + name);
+            codeInd--;
+            emit("endFunc: " + name);
         }
     }
 
@@ -138,7 +160,7 @@ public class AST {
         void gen(){
             if(flag){
                 e.gen();
-                prog3AdCode.add(name + " = " + e.getV());
+                emit(name + " = " + e.getV());
             }
         }
 
@@ -212,7 +234,7 @@ public class AST {
                 last = e;
             }
 
-            prog3AdCode.add(v + " = " + last.getV());
+            emit(v + " = " + last.getV());
         }
 
         @Override
@@ -285,7 +307,7 @@ public class AST {
             e2.gen();
             String command = v + " = " + e1.getV() + " " + op + " " + e2.getV();
 
-            prog3AdCode.add(command);
+            emit(command);
 
 
         }
@@ -312,7 +334,7 @@ public class AST {
         }
 
         void gen(){
-            //prog3AdCode.add( Integer.toString(value));
+            //emit( Integer.toString(value));
         }
         @Override
         String getV(){
@@ -360,7 +382,7 @@ public class AST {
             e2.gen();
             String command = v + " = " + e1.getV() + " " + op + (op.equals("=") ? op : "") + " " + e2.getV();
 
-            prog3AdCode.add(command);
+            emit(command);
         }
         @Override
         String getV(){
@@ -389,7 +411,7 @@ public class AST {
         void gen(){
             e.gen();
             String command = v + " = " + op + " " + e.getV();
-            prog3AdCode.add(command);
+            emit(command);
         }
         @Override
         String getV(){
@@ -415,7 +437,7 @@ public class AST {
         void gen(){
             e.gen();
             //String command = "( " + e.getV() + " )";
-            //prog3AdCode.add(command);
+            //emit(command);
         }
         @Override
         String getV(){
@@ -447,13 +469,17 @@ public class AST {
 
         void gen(){
             e1.gen();
-            prog3AdCode.add("ifFalse " + e1.getV() + " goto " + before_else);
+            emit("ifFalse " + e1.getV() + " goto " + before_else);
+            codeInd++;
             e2.gen();
-            prog3AdCode.add("goto " + after_else);
-            prog3AdCode.add(before_else + ": ");
+            codeInd--;
+            emit("goto " + after_else);
+            emit(before_else + ": ");
+            codeInd++;
             e3.gen();
-            prog3AdCode.add(after_else + ": ");
-            //prog3AdCode.add( Integer.toString(value));
+            codeInd--;
+            emit(after_else + ": ");
+            //emit( Integer.toString(value));
         }
 
         @Override
@@ -481,12 +507,16 @@ public class AST {
         }
 
         void gen(){
-            prog3AdCode.add(before + ": ");
+            emit(before + ": ");
+            codeInd++;
             e1.gen();
-            prog3AdCode.add("ifFalse " + e1.getV() + " goto " + after);
+            codeInd--;
+            emit("ifFalse " + e1.getV() + " goto " + after);
+            codeInd++;
             e2.gen();
-            prog3AdCode.add("goto " + before);
-            prog3AdCode.add(after + ": ");
+            codeInd--;
+            emit("goto " + before);
+            emit(after + ": ");
         }
 
         /*@Override
@@ -534,7 +564,7 @@ public class AST {
 
         void gen(){
             e.gen();
-            prog3AdCode.add(v + " = " + e.getV() );
+            emit(v + " = " + e.getV() );
         }
 
         @Override
@@ -621,7 +651,7 @@ public class AST {
         void gen(){
             e.gen();
             String command = v + " = " + e.getV() + " == NULL";
-            prog3AdCode.add(command);
+            emit(command);
         }
 
         @Override
@@ -656,13 +686,13 @@ public class AST {
             for (AST.Expression it : exprs){
                 if(flags.get(po)){
                     it.gen();
-                    prog3AdCode.add(ids.get(po) + " = " + it.getV());
+                    emit(ids.get(po) + " = " + it.getV());
                 }
                 po++;
             }
 
             e.gen();
-            prog3AdCode.add(v + " = " + e.getV());
+            emit(v + " = " + e.getV());
         }
 
         @Override
@@ -699,10 +729,10 @@ public class AST {
 
             for(Expression e: exprs){
                 e.gen();
-                prog3AdCode.add("param " + e.getV());
+                emit("param " + e.getV());
             }
 
-            prog3AdCode.add("call " + name + ", " + exprs.size());
+            emit("call " + name + ", " + exprs.size());
         }
 
         @Override

@@ -1,2 +1,1 @@
-beginClass: Main
-endClass: Main
+(program (programBlocks (classDefine class Main { featureList }) ;) <EOF>)

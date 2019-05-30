@@ -1,0 +1,22 @@
+beginClass: B
+   s = "Hello"
+   beginFunc: g: String: y
+      param s
+      call concat, 1
+   endFunc: g
+   beginFunc: f: Int: x
+      t1 = x + 1
+   endFunc: f
+endClass: B
+beginClass: A
+   b = NULL
+   beginFunc: f: Int: x
+      t2 = x + a
+   endFunc: f
+endClass: A
+beginClass: Main
+   beginFunc: main: 
+      param "HelloWorld"
+      call out_string, 1
+   endFunc: main
+endClass: Main

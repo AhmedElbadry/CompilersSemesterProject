@@ -25,7 +25,7 @@ public class TestCodegen {
     public static void main(String[] args) {
         try{
             String TestCaseFile = "Test Cases/" + args[0];
-            String OutputFile = "Output/" + args[0] + "-CST";
+            String OutputFile = "Output/" + args[0] + "-TAC";
 
             File file = new File(OutputFile);
             file.delete();

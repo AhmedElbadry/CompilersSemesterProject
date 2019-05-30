@@ -1,9 +1,0 @@
-beginClass: Main
-beginFunc: main
-param 5
-param 2
-t1 = 6 + 9
-param t1
-call testFunc, 3
-endFunc: main
-endClass: Main

@@ -15,7 +15,7 @@ To compile the project:
 
 To run the lexer on an input file good1.cl
 
-`java -cp "classes;dep/antlr-4.7.2-complete.jar" TestLexr good1.cl`
+`java -cp "classes;dep/antlr-4.7.2-complete.jar" TestLexer good1.cl`
 
 To run the parser on an input file good1.cl
 
